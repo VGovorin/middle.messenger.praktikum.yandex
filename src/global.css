@@ -12,6 +12,8 @@
 @import '/src/components/profile-user-avatar/profile-user-avatar.css';
 @import '/src/components/setting-item/setting-item.css';
 @import '/src/components/settings-list/settings-list.css';
+@import '/src/components/settings-list/settings-list.css';
+@import '/src/components/controllers-settings-list/controllers-settings-list.css';
 @import '/src/components/svg-icon/svg-icon.css';
 @import '/src/pages/profile/profile.css';
 

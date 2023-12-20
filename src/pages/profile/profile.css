@@ -5,22 +5,3 @@
   gap: 3.75rem;
   width: 31.875rem;
 }
-
-.user-name {
-  margin-top: 1.3rem;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1rem;
-}
-
-.link-profile-settings {
-  text-align: left;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 0.8125rem;
-}
-
-.user-data-item .exit-button {
-  font-weight: 500;
-  color: var(--dangerous-color-text);
-}

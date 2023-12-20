@@ -10,6 +10,13 @@
   cursor: pointer;
 }
 
+.user-name {
+  margin-top: 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1rem;
+}
+
 .change-avatar-wrapper {
   position: absolute;
   left: 0;
