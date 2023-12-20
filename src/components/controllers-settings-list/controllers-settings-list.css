@@ -2,10 +2,3 @@
   font-weight: 500;
   color: var(--dangerous-color-text);
 }
-
-.link-profile-settings {
-  text-align: left;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  line-height: 0.8125rem;
-}

@@ -10,3 +10,10 @@
 .link:hover {
   opacity: 0.8;
 }
+
+.user-data-item .link-profile-settings {
+  text-align: left;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 0.8125rem;
+}
