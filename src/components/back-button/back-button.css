@@ -1,0 +1,13 @@
+.back-button-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 100vh;
+  background-color: var(--wrapper-back-btn-background);
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}

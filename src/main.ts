@@ -11,10 +11,10 @@ const pages = {
   'sign-up': [Pages.SignUp, { title: 'Sign Up' }],
   'not-found': [Pages.NotFound, { title: '404', message: 'Not Found Page', label: 'Back to Chats', type: 'error' }],
   'server-error': [Pages.NotFound, { title: '500', message: "We're already fixing", label: 'Back to Chats', type: 'error' }],
+  'profile': [Pages.Profile, { title: 'Profile' }],
 };
 
 Object.entries(Components).forEach(([name, component]) => {
-  console.log('componentL: ', component)
   Handlebars.registerPartial(name, component);
 });
 
@@ -27,6 +27,18 @@ const onClick = (e: MouseEvent) => {
   if (root) {
     root.innerHTML = Handlebars.compile(source)(context);
   };
+
+  // const id = document.getElementById('change-avatar');
+
+  // if (id) {
+  //   id.addEventListener('click', () => console.log('hello'));
+  //   console.log(id);
+  //   console.log('source', source);
+  //   console.log('context', context);
+  //   console.log('context', Components.Button);
+  //   const x = Handlebars.compile(Components.Button)({label: 'qwer', type: 'type'})
+  //   console.log('XXX', x);
+  // }
 };
 
 const getListPages = () => {

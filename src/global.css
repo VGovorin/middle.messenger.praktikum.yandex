@@ -1,4 +1,5 @@
 @import '/src/palette.css';
+@import '/src/components/back-button/back-button.css';
 @import '/src/components/button/button.css';
 @import '/src/components/form/form.css';
 @import '/src/components/form-controllers/form-controllers.css';
@@ -8,6 +9,11 @@
 @import '/src/components/link/link.css';
 @import '/src/components/message-error/message-error.css';
 @import '/src/components/input/input.css';
+@import '/src/components/profile-user-avatar/profile-user-avatar.css';
+@import '/src/components/setting-item/setting-item.css';
+@import '/src/components/settings-list/settings-list.css';
+@import '/src/components/svg-icon/svg-icon.css';
+@import '/src/pages/profile/profile.css';
 
 @font-face {
   font-family: 'inter';
@@ -25,6 +31,11 @@
   --text-color-white: var(--white);
   --text-color-blue: var(--blue_420);
   --form-container-shadow: var(--black_alpha14);
+  --wrapper-back-btn-background: var(--light-grey_020);
+  --backing-avatar-background: var(--light-grey_060);
+  --border-bottom-color: var(--light-grey_080);
+  --dangerous-color-text: var(--red_500);
+  --change-avatar-backing: var(--black_alpha50);
   --font-inter: 'inter';
 }
 

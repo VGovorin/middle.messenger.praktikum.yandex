@@ -1,0 +1,35 @@
+.profile-avatar-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8.125rem;
+  height: 8.125rem;
+  background-color: var(--backing-avatar-background);
+  clip-path: circle(50%);
+  cursor: pointer;
+}
+
+.change-avatar-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: var(--change-avatar-backing);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.change-avatar-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: var(--white);
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.profile-avatar-wrapper:hover > .change-avatar-wrapper {
+  opacity: 1;
+}
