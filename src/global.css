@@ -6,6 +6,7 @@
 @import '/src/components/heading/heading.css';
 @import '/src/components/legend/legend.css';
 @import '/src/components/link/link.css';
+@import '/src/components/message-error/message-error.css';
 @import '/src/components/input/input.css';
 
 @font-face {
@@ -59,7 +60,7 @@ button {
   margin-bottom: 0.5rem;
 }
 
-.form-container {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,3 +6,4 @@ export { Link } from './link';
 export { FormControllers } from './form-controllers';
 export { Fieldset } from './fieldset';
 export { Legend } from './legend';
+export { MessageError } from './message-error';

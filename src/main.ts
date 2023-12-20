@@ -9,6 +9,8 @@ interface PageContext {
 const pages = {
   'sign-in': [Pages.SignIn, { title: 'Sign In' }],
   'sign-up': [Pages.SignUp, { title: 'Sign Up' }],
+  'not-found': [Pages.NotFound, { title: '404', message: 'Not Found Page', label: 'Back to Chats', type: 'error' }],
+  'server-error': [Pages.NotFound, { title: '500', message: "We're already fixing", label: 'Back to Chats', type: 'error' }],
 };
 
 Object.entries(Components).forEach(([name, component]) => {
