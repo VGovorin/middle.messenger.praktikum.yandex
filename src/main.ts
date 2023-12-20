@@ -27,18 +27,6 @@ const onClick = (e: MouseEvent) => {
   if (root) {
     root.innerHTML = Handlebars.compile(source)(context);
   };
-
-  // const id = document.getElementById('change-avatar');
-
-  // if (id) {
-  //   id.addEventListener('click', () => console.log('hello'));
-  //   console.log(id);
-  //   console.log('source', source);
-  //   console.log('context', context);
-  //   console.log('context', Components.Button);
-  //   const x = Handlebars.compile(Components.Button)({label: 'qwer', type: 'type'})
-  //   console.log('XXX', x);
-  // }
 };
 
 const getListPages = () => {
