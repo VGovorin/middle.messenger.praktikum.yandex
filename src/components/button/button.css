@@ -2,6 +2,8 @@
   border-radius: 0.5rem;
   padding: 0.75rem 0;
   color: var(--text-color-blue);
+  width: 100%;
+  max-width: 17.5rem;
 }
 
 .button:hover {

@@ -12,6 +12,8 @@ const pages = {
   'not-found': [Pages.NotFound, { title: '404', message: 'Not Found Page', label: 'Back to Chats', type: 'error' }],
   'server-error': [Pages.NotFound, { title: '500', message: "We're already fixing", label: 'Back to Chats', type: 'error' }],
   'profile': [Pages.Profile, { title: 'Profile' }],
+  'change-common-data': [Pages.ChangeCommonData, { title: 'Change Common Data' }],
+  'change-password': [Pages.ChangePassword, { title: 'Change Password' }],
 };
 
 Object.entries(Components).forEach(([name, component]) => {

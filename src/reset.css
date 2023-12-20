@@ -27,6 +27,10 @@ select {
   background-color: transparent;
 }
 
+input:focus {
+  outline: none;
+}
+
 ul,
 ol,
 summary {

@@ -14,3 +14,5 @@ export { SettingsList } from './settings-list';
 export { SettingItem } from './setting-item';
 export { CommonSettingsList } from './common-settings-list';
 export { ControllersSettingsList } from './controllers-settings-list';
+export { ChangePasswordList } from './change-password-list';
+export { ChangeCommonDataList } from './change-common-data-list';
