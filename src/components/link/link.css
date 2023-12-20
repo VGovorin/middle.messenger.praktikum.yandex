@@ -1,0 +1,11 @@
+.link {
+  width: 100%;
+  text-align: center;
+  font-size: 0.6875rem;
+  line-height: 0.6875rem;
+  color: var(--text-color-blue);;
+}
+
+.link:hover {
+  opacity: 0.8;
+}

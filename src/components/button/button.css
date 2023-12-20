@@ -1,0 +1,14 @@
+.button {
+  border-radius: 0.5rem;
+  padding: 0.75rem 0;
+  color: var(--text-color-blue);
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button-primary {
+  background-color: var(--button-primary-background);
+  color: var(--text-color-white);
+}

@@ -1,0 +1,20 @@
+<div class="form-container">
+  {{#> Form}}
+    {{#> Fieldset}}
+      {{> Legend title=title}}
+      <div class="form-items-wrapper">
+        {{> Input type="email" label="Email Address" autocomplete="email" name="email" }}
+        {{> Input type="text" label="Login" autocomplete="off" name="login" }}
+        {{> Input type="text" label="First Name" autocomplete="given-name" name="first_name" }}
+        {{> Input type="text" label="Last Name" autocomplete="family-name" name="second_name" }}
+        {{> Input type="tel" label="Phone Number" autocomplete="tel" name="phone" }}
+        {{> Input type="password" label="Password" autocomplete="new-password" name="password" }}
+        {{> Input type="password" label="Re-enter Password" autocomplete="new-password" name="re-enter-password" }}
+      </div>
+    {{/Fieldset}}
+    {{#> FormControllers}}
+      {{> Button label="Create Account" type="primary" page="list" }}
+      {{> Link label="Sign In" href="#" }}
+    {{/FormControllers}}
+  {{/Form}}
+</div>

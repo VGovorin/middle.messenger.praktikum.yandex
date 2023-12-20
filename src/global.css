@@ -1,0 +1,67 @@
+@import '/src/palette.css';
+@import '/src/components/button/button.css';
+@import '/src/components/form/form.css';
+@import '/src/components/form-controllers/form-controllers.css';
+@import '/src/components/fieldset/fieldset.css';
+@import '/src/components/heading/heading.css';
+@import '/src/components/legend/legend.css';
+@import '/src/components/link/link.css';
+@import '/src/components/input/input.css';
+
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/inter-variable-font.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --button-primary-background: var(--blue_420);
+  --border-primary: var(--blue_420);
+  --text-color-primary: var(--black_880);
+  --text-color-secondary: var(--black_400);
+  --text-color-white: var(--white);
+  --text-color-blue: var(--blue_420);
+  --form-container-shadow: var(--black_alpha14);
+  --font-inter: 'inter';
+}
+
+html,
+body {
+  font-family: var(--font-inter);
+}
+
+.h1,
+h1 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--text-color-primary);
+}
+
+.text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 0.8125rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-list {
+  padding: 3.125rem;
+}
+
+.page-item {
+  margin-bottom: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
