@@ -1,0 +1,117 @@
+.chat-item {
+  --chat-spacing: 0.625rem;
+
+  position: relative;
+  display: flex;
+  gap: var(--chat-spacing);
+  padding: var(--chat-spacing) var(--chat-spacing);
+  cursor: pointer;
+}
+
+.chat-item:first-child {
+  margin-top: 0.1875rem;
+}
+
+.chat-item:first-child:before {
+  content: '';
+  position: absolute;
+  left: var(--chat-spacing);
+  top: -0.1875rem;
+  width: calc(100% - var(--chat-spacing) - var(--chat-spacing));
+  height: 1px;
+  background-color: var(--border-bottom-color);
+}
+
+.chat-item::after {
+  content: '';
+  position: absolute;
+  left: var(--chat-spacing);
+  bottom: -0.1875rem;
+  width: calc(100% - var(--chat-spacing) - var(--chat-spacing));
+  height: 1px;
+  background-color: var(--border-bottom-color);
+}
+
+.chat-item:hover {
+  background-color: var(--hovered-chat-background);
+}
+
+.chat-item-left-container {
+  flex: 0 0 2.9375rem;
+  width: 2.9375rem;
+  height: 2.9375rem;
+  background: var(--backing-avatar-background);
+  clip-path: circle(50%);
+}
+
+.chat-item-avatar {
+  width: 100%;
+  height: auto;
+}
+
+.chat-item-right-container {
+  flex-grow: 1;
+}
+
+.chat-item-inner-top-container {
+  display: flex;
+  gap: var(--chat-spacing);
+  justify-content: space-between;
+}
+
+.chat-item-inner-bottom-container {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: space-between;
+  height: 1.875rem;
+}
+
+.chat-item-user-name {
+  width: 10.5rem;
+  overflow: hidden;
+  color: var(--text-color-primary);
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.chat-item-inner-bottom-container .chat-item-message {
+  width: 12.0625rem;
+  max-height: 1.875rem;
+  overflow: hidden;
+  color: var(--text-color-secondary);
+  line-height: 0.9375rem;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.chat-item-date {
+  color: var(--text-color-secondary);
+  text-align: right;
+  font-size: 0.5625rem;
+  font-weight: 500;
+  line-height: 0.8125rem;
+}
+
+.chat-item-notice-wrapper {
+  position: relative;
+  align-self: flex-end;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: var(--notification-primary-background);
+  clip-path: circle(50%);
+}
+
+.chat-item-notice-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color-white);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 0.75rem;
+}
+
+.chat-item-user-name {
+  margin-bottom: 0.25rem;
+}

@@ -16,3 +16,6 @@ export { CommonSettingsList } from './common-settings-list';
 export { ControllersSettingsList } from './controllers-settings-list';
 export { ChangePasswordList } from './change-password-list';
 export { ChangeCommonDataList } from './change-common-data-list';
+export { ChatsHeader } from './chats-header';
+export { ChatItem } from './chat-item';
+export { ChatsList } from './chats-list';

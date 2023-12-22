@@ -5,3 +5,4 @@ export { ServerError } from './server-error';
 export { Profile } from './profile';
 export { ChangePassword } from './change-password';
 export { ChangeCommonData } from './change-common-data';
+export { SelectChat } from './select-chat';

@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0,1fr) minmax(0,3.65fr);
+}
+
+.nav-panel {
+  grid-column: 1 / 1;
+  height: 100vh;
+  padding-bottom: 10px;
+  border-right: 1px solid var(--border-bottom-color);
+  background-color: var(--aside-chats-background);
+  overflow: auto;
+}
+
+.nav-panel::-webkit-scrollbar {
+  display: none;
+}
+
+.main-content {
+  grid-column: 2 / 2;
+}
+
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.select-chat-message {
+  color: var(--text-color-secondary);
+  text-align: center;
+}
