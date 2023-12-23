@@ -1,0 +1,78 @@
+.chat-room-header {
+  --chat-room-header-x-spacing: 1.25rem;
+
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.635rem var(--chat-room-header-x-spacing);
+  width: -webkit-fill-available;
+  background-color: var(--chat-room-header-background);
+}
+
+.chat-room-header::after {
+  content: '';
+  position: absolute;
+  left: var(--chat-room-header-x-spacing);
+  bottom: 0;
+  width: calc(100% - var(--chat-room-header-x-spacing) - var(--chat-room-header-x-spacing));
+  height: 1px;
+  background-color: var(--border-bottom-color);
+}
+
+.chat-room-header-user-container {
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+}
+
+.chat-room-header-user-avatar-wrapper {
+  width: 2.125rem;
+  height: 2.125rem;
+  clip-path: circle(50%);
+  background-color: var(--backing-avatar-background);
+}
+
+.chat-room-header-user-avatar {
+  width: 100%;
+  height: auto;
+}
+
+.chat-room-header-user-name {
+  color: var(--text-color-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 0.8125rem;
+}
+
+.kebab-button {
+  padding: 0.315rem 0.695rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.kebab-button .icon-kebab-menu {
+  display: block;
+}
+
+.kebab-button:hover .icon-kebab-menu {
+  --fill-color-sprite: var(--kebab-icon-background-active);
+}
+
+.icon-kebab-menu {
+  --fill-color-sprite: var(--kebab-icon-background-disable);
+}
+
+.kebab-button-active {
+  background-color: var(--kebab-button-background-active);
+}
+
+.kebab-button-active .icon-kebab-menu {
+  --fill-color-sprite: var(--kebab-icon-background-active);
+}
+
+.kebab-button:hover {
+  background-color: var(--kebab-button-background-active);
+}

@@ -1,0 +1,12 @@
+.chat-room-body {
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  height: 100%;
+  padding: 4.375rem 1.25rem 0.625rem;
+  overflow-y: auto;
+}
+
+.chat-room-body::-webkit-scrollbar {
+  display: none;
+}

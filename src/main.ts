@@ -15,6 +15,7 @@ const pages = {
   'change-common-data': [Pages.ChangeCommonData, { title: 'Change Common Data' }],
   'change-password': [Pages.ChangePassword, { title: 'Change Password' }],
   'select-chat': [Pages.SelectChat, { title: 'Select Chat' }],
+  'chat': [Pages.Chat, { title: 'Chat' }],
 };
 
 Object.entries(Components).forEach(([name, component]) => {
