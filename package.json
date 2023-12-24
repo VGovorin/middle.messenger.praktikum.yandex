@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vite",
     "start": "tsc && vite build && vite preview --port 3000",
+    "start:prod": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
