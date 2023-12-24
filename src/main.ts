@@ -35,6 +35,7 @@ const onClick = (e: MouseEvent) => {
 
 const getListPages = () => {
   const root = document.getElementById('app');
+  const nav = document.createElement('nav');
   const ul = document.createElement('ul');
   ul.classList.add('page-list');
 
@@ -51,7 +52,8 @@ const getListPages = () => {
     ul.appendChild(li);
   });
 
-  root?.appendChild(ul);
+  nav.appendChild(ul);
+  root?.appendChild(nav);
 };
 
 document.addEventListener('DOMContentLoaded', getListPages);
