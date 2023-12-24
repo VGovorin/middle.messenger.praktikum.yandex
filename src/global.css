@@ -1,0 +1,114 @@
+@import '/src/imports.css';
+
+@font-face {
+  font-family: 'inter';
+  src: url('/fonts/inter-variable-font.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --button-primary-background: var(--blue_420);
+  --border-primary: var(--blue_420);
+  --notification-primary-background: var(--blue_420);
+  --text-color-primary: var(--black_880);
+  --text-color-secondary: var(--black_400);
+  --text-color-white: var(--white);
+  --text-color-blue: var(--blue_420);
+  --text-color-message: var(--black_880);
+  --form-container-shadow: var(--black_alpha14);
+  --wrapper-back-btn-background: var(--light-grey_020);
+  --aside-chats-background: var(--light-grey_020);
+  --input-search-background: var(--light-grey_060);
+  --backing-avatar-background: var(--light-grey_060);
+  --border-bottom-color: var(--light-grey_080);
+  --dangerous-color-text: var(--red_500);
+  --hovered-chat-background: var(--gray-blue_060);
+  --change-avatar-backing: var(--black_alpha50);
+  --profile-arrow-background: var(--black_400);
+  --outgoing-message-background: var(--gray-blue_060);
+  --incoming-message-background: var(--light-gray_030);
+  --attach-file-icon-sprite-color-disabled: var(--black_400);
+  --attach-file-icon-sprite-color-active: var(--blue_420);
+  --input-message-chat-background: var(--light-grey_060);
+  --chat-room-footer-background: var(--white);
+  --chat-room-header-background: var(--white);
+  --kebab-button-background-active: var(--light-gray_040);
+  --kebab-icon-background-disable: var(--black_880);
+  --kebab-icon-background-active: var(--blue_420);
+  --icon-indicator-message-status-unread: var(--light-grey_080);
+  --icon-indicator-message-status-read: var(--blue_420);
+  --font-inter: 'inter';
+}
+
+html,
+body {
+  font-family: var(--font-inter);
+  font-size: 16px;
+}
+
+.h1,
+h1 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--text-color-primary);
+}
+
+.text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 0.8125rem;
+}
+
+.text-fs-12 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 0.75rem;
+}
+
+.visually-hidden {
+  clip: rect(1px,1px,1px,1px)!important;
+  border: 0!important;
+  clip-path: inset(50%)!important;
+  height: 1px!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  padding: 0!important;
+  position: absolute!important;
+  white-space: nowrap!important;
+  width: 1px!important;
+}
+
+button {
+  cursor: pointer;
+}
+
+.page-list {
+  padding: 3.125rem;
+}
+
+.page-item {
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.change-input {
+  text-align: right;
+  color: var(--text-color-secondary);
+  font-weight: 500;
+}
+
+.main-grid {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0,1fr) minmax(0,3.65fr);
+}

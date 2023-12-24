@@ -1,0 +1,6 @@
+.form {
+  width: 21.25rem;
+  padding: 3.13rem 1.88rem 1.88rem;
+  box-shadow: 0 0 6px 0 var(--form-container-shadow);
+  border-radius: 0.75rem;
+}

@@ -1,0 +1,4 @@
+.user-data-item .exit-button {
+  font-weight: 500;
+  color: var(--dangerous-color-text);
+}

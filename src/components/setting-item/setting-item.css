@@ -1,0 +1,25 @@
+.user-data-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.62rem 0;
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+
+.user-data-item:first-child {
+  padding-top: 0;
+}
+
+.user-data-item:last-child {
+  padding-bottom: 0;
+  border: none;
+}
+
+.user-data-item .user-data-description {
+  color: var(--text-color-primary);
+  font-weight: 500;
+}
+
+.user-data-item .user-data {
+  color: var(--text-color-secondary);
+  font-weight: 500;
+}
