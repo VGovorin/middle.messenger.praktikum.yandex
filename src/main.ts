@@ -9,13 +9,32 @@ interface PageContext {
 const pages = {
   'sign-in': [Pages.SignIn, { title: 'Sign In' }],
   'sign-up': [Pages.SignUp, { title: 'Sign Up' }],
-  'not-found': [Pages.NotFound, { title: '404', message: 'Not Found Page', label: 'Back to Chats', type: 'error' }],
-  'server-error': [Pages.NotFound, { title: '500', message: "We're already fixing", label: 'Back to Chats', type: 'error' }],
-  'profile': [Pages.Profile, { title: 'Profile' }],
-  'change-common-data': [Pages.ChangeCommonData, { title: 'Change Common Data' }],
+  'not-found': [
+    Pages.NotFound,
+    {
+      title: '404',
+      message: 'Not Found Page',
+      label: 'Back to Chats',
+      type: 'error',
+    },
+  ],
+  'server-error': [
+    Pages.NotFound,
+    {
+      title: '500',
+      message: "We're already fixing",
+      label: 'Back to Chats',
+      type: 'error',
+    },
+  ],
+  profile: [Pages.Profile, { title: 'Profile' }],
+  'change-common-data': [
+    Pages.ChangeCommonData,
+    { title: 'Change Common Data' },
+  ],
   'change-password': [Pages.ChangePassword, { title: 'Change Password' }],
   'select-chat': [Pages.SelectChat, { title: 'Select Chat' }],
-  'chat': [Pages.Chat, { title: 'Chat' }],
+  chat: [Pages.Chat, { title: 'Chat' }],
 };
 
 Object.entries(Components).forEach(([name, component]) => {
@@ -30,7 +49,7 @@ const onClick = (e: MouseEvent) => {
 
   if (root) {
     root.innerHTML = Handlebars.compile(source)(context);
-  };
+  }
 };
 
 const getListPages = () => {
