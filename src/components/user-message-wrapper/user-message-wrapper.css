@@ -52,10 +52,10 @@
 }
 
 .icon-indicator-message-status-read {
-  --stroke-color-sprite: var(--icon-indicator-message-status-read);  
+  --stroke-color-sprite: var(--icon-indicator-message-status-read);
 }
 
-.message-text { 
+.message-text {
   padding: 0.695rem;
   border-radius: 0.75rem;
   color: var(--text-color-message);

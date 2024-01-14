@@ -14,7 +14,9 @@
   background-color: var(--border-bottom-color);
   block-size: 1px;
   content: '';
-  inline-size: calc(100% - var(--chat-room-footer-x-spacing) - var(--chat-room-footer-x-spacing));
+  inline-size: calc(
+    100% - var(--chat-room-footer-x-spacing) - var(--chat-room-footer-x-spacing)
+  );
   inset-block-start: 0;
   inset-inline-start: 0.695rem;
 }

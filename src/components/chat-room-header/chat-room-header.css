@@ -19,7 +19,9 @@
   background-color: var(--border-bottom-color);
   block-size: 1px;
   content: '';
-  inline-size: calc(100% - var(--chat-room-header-x-spacing) - var(--chat-room-header-x-spacing));
+  inline-size: calc(
+    100% - var(--chat-room-header-x-spacing) - var(--chat-room-header-x-spacing)
+  );
   inset-block-end: 0;
   inset-inline-start: var(--chat-room-header-x-spacing);
 }
