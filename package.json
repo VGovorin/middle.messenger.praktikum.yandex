@@ -1,0 +1,21 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "0.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "start": "tsc && vite build && vite preview --port 3000",
+    "start:prod": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "handlebars": "^4.7.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-handlebars": "^1.6.0"
+  }
+}

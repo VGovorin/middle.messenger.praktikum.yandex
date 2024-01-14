@@ -1,0 +1,7 @@
+.chat-room-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 2 / 2;
+  height: 100vh;
+}

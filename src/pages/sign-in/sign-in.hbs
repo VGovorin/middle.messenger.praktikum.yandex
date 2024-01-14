@@ -1,0 +1,15 @@
+<main class="container">
+  {{#> Form}}
+    {{#> Fieldset}}
+      {{> Legend title=title  }}
+      <div class="form-items-wrapper">
+        {{> Input type="text" label="Login" autocomplete="username" name="login" }}
+        {{> Input type="password" label="Password" autocomplete="current-password" name="password" }}
+      </div>
+    {{/Fieldset}}
+    {{#> FormControllers}}
+      {{> Button label="Sign In" type="primary" page="list" }}
+      {{> Link label="Sign Up" href="#" }}
+    {{/FormControllers}}
+  {{/Form}}
+</main>

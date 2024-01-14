@@ -1,0 +1,12 @@
+.sidebar {
+  grid-column: 1 / 1;
+  height: 100vh;
+  padding-bottom: 10px;
+  border-right: 1px solid var(--border-bottom-color);
+  background-color: var(--aside-chats-background);
+  overflow: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
