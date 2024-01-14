@@ -1,75 +1,75 @@
 .nav-panel-header {
   position: sticky;
-  top: 0;
   z-index: 1;
   display: flex;
   flex-direction: column;
-  padding: 1.31rem 0.625rem 0.875rem 0.625rem;
+  padding: 1.31rem 0.625rem 0.875rem;
   background-color: var(--aside-chats-background);
+  inset-block-start: 0;
 }
 
 .profile-link {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   justify-content: flex-end;
-  margin-bottom: 1.44rem;
   color: var(--text-color-secondary);
-  text-align: right;
+  gap: 0.5rem;
+  margin-block-end: 1.44rem;
+  text-align: end;
 }
 
 .profile-link-arrow {
   position: relative;
-  width: 0.5rem;
-  height: 0.3rem;
+  block-size: 0.3rem;
+  inline-size: 0.5rem;
 }
 
 .profile-link-arrow::before {
-  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 0.375rem;
-  height: 1px;
   background-color: var(--profile-arrow-background);
+  block-size: 1px;
+  content: '';
+  inline-size: 0.375rem;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   transform: rotate(45deg);
 }
 
 .profile-link-arrow::after {
-  content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0.375rem;
-  height: 1px;
   background-color: var(--profile-arrow-background);
+  block-size: 1px;
+  content: '';
+  inline-size: 0.375rem;
+  inset-block-end: 0;
+  inset-inline-start: 0;
   transform: rotate(315deg);
 }
 
 
 .chat-search-widget {
   position: relative;
-  width: 100%;
+  inline-size: 100%;
 }
 
 .chat-search-input {
-  width: 100%;
   padding: 0.38rem 0.63rem 0.38rem 1.88rem;
   border-radius: 0.3125rem;
   background: var(--input-search-background);
+  inline-size: 100%;
 }
 
 .chat-search-input-description {
   position: absolute;
-  left: 50%;
-  top: 50%;
   display: flex;
-  gap: 0.25rem;
   align-items: center;
   justify-content: center;
+  gap: 0.25rem;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  transition: transform 0.2s ease-in-out, left 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, inset-inline-start 0.2s ease-in-out;
 }
 
 .chat-search-input-description-text {
@@ -82,6 +82,6 @@
 }
 
 .chat-search-input:focus + .chat-search-input-description {
-  left: 0.38rem;
+  inset-inline-start: 0.38rem;
   transform: translate(0, -50%);
 }

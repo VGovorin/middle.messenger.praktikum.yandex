@@ -1,5 +1,5 @@
 .legend {
-  width: 100%;
-  margin-bottom: 2.5rem;
   padding: 0;
+  inline-size: 100%;
+  margin-block-end: 2.5rem;
 }

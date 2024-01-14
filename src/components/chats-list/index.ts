@@ -1,4 +1,5 @@
-import Handlebars from "handlebars";
+import Handlebars from 'handlebars';
+
 export { default as ChatsList } from './chats-list.hbs?raw';
 
 Handlebars.registerHelper('chats', () => {
@@ -11,7 +12,12 @@ Handlebars.registerHelper('chats', () => {
     { 'user-name': 'Frank', message: 'See you later!', date: 'Sun', notice: 6 },
     { 'user-name': 'Grace', message: 'Howdy!', date: 'Mon', notice: 7 },
     { 'user-name': 'Henry', message: 'Hey there!', date: '2023-12-22' },
-    { 'user-name': 'Ivy', message: 'What\'s up?', date: '2023-12-22' },
-    { 'user-name': 'Jack', message: 'Greetings!', date: '2023-12-22', notice: 1 }
+    { 'user-name': 'Ivy', message: "What's up?", date: '2023-12-22' },
+    {
+      'user-name': 'Jack',
+      message: 'Greetings!',
+      date: '2023-12-22',
+      notice: 1,
+    },
   ];
 });

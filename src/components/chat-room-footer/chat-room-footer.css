@@ -3,31 +3,31 @@
 
   position: relative;
   display: flex;
-  gap: 0.625rem;
   align-items: center;
   padding: 0.695rem var(--chat-room-footer-x-spacing);
   background-color: var(--chat-room-footer-background);
+  gap: 0.625rem;
 }
 
 .chat-room-footer::before {
-  content: '';
   position: absolute;
-  top: 0;
-  left: 0.695rem;
-  width: calc(100% - var(--chat-room-footer-x-spacing) - var(--chat-room-footer-x-spacing));
-  height: 1px;
   background-color: var(--border-bottom-color);
+  block-size: 1px;
+  content: '';
+  inline-size: calc(100% - var(--chat-room-footer-x-spacing) - var(--chat-room-footer-x-spacing));
+  inset-block-start: 0;
+  inset-inline-start: 0.695rem;
 }
 
 .attach-button .icon-attach {
   --fill-color-sprite: var(--attach-file-icon-sprite-color-disabled);
 }
 
-.attach-button:hover .icon-attach {
+.active-attach-button .icon-attach {
   --fill-color-sprite: var(--attach-file-icon-sprite-color-active);
 }
 
-.active-attach-button .icon-attach {
+.attach-button:hover .icon-attach {
   --fill-color-sprite: var(--attach-file-icon-sprite-color-active);
 }
 
@@ -36,10 +36,10 @@
 }
 
 .input-message-chat {
-  width: 100%;
   padding: 0.635rem var(--chat-room-footer-x-spacing);
   border-radius: 1.875rem;
   background-color: var(--input-message-chat-background);
+  inline-size: 100%;
 }
 
 .send-message-button .icon-send-message {

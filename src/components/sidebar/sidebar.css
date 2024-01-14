@@ -1,10 +1,10 @@
 .sidebar {
-  grid-column: 1 / 1;
-  height: 100vh;
-  padding-bottom: 10px;
-  border-right: 1px solid var(--border-bottom-color);
-  background-color: var(--aside-chats-background);
   overflow: auto;
+  background-color: var(--aside-chats-background);
+  block-size: 100vb;
+  border-inline-end: 1px solid var(--border-bottom-color);
+  grid-column: 1 / 1;
+  padding-block-end: 0.625rem;
 }
 
 .sidebar::-webkit-scrollbar {

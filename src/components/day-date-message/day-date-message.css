@@ -1,6 +1,6 @@
 .day-date-message {
   align-self: center;
-  margin-bottom: 1.875rem;
   color: var(--text-color-secondary);
+  margin-block-end: 1.875rem;
   text-align: center;
 }

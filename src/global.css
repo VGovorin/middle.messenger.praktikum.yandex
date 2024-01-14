@@ -1,11 +1,11 @@
-@import '/src/imports.css';
+@import url('/src/imports.css');
 
 @font-face {
-  font-family: 'inter';
-  src: url('/fonts/inter-variable-font.ttf');
-  font-weight: normal;
-  font-style: normal;
   font-display: swap;
+  font-family: inter;
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/inter-variable-font.ttf');
 }
 
 :root {
@@ -45,16 +45,16 @@
 html,
 body {
   font-family: var(--font-inter);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .h1,
 h1 {
-  text-align: center;
+  color: var(--text-color-primary);
   font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.25rem;
-  color: var(--text-color-primary);
+  text-align: center;
 }
 
 .text {
@@ -70,16 +70,16 @@ h1 {
 }
 
 .visually-hidden {
-  clip: rect(1px,1px,1px,1px)!important;
-  border: 0!important;
-  clip-path: inset(50%)!important;
-  height: 1px!important;
-  margin: -1px!important;
+  position: absolute!important;
   overflow: hidden!important;
   padding: 0!important;
-  position: absolute!important;
+  border: 0!important;
+  margin: -0.0625rem!important;
+  block-size: 1px!important;
+  clip: rect(1px,1px,1px,1px)!important;
+  clip-path: inset(50%)!important;
+  inline-size: 1px!important;
   white-space: nowrap!important;
-  width: 1px!important;
 }
 
 button {
@@ -91,20 +91,20 @@ button {
 }
 
 .page-item {
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 .container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
+  block-size: 100vb;
 }
 
 .change-input {
-  text-align: right;
   color: var(--text-color-secondary);
   font-weight: 500;
+  text-align: end;
 }
 
 .main-grid {

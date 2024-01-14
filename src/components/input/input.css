@@ -3,28 +3,28 @@
 }
 
 .input-element {
-  width: 100%;
   padding: 0.4rem 0;
-  border-bottom: 1px solid var(--border-primary);
+  border-block-end: 1px solid var(--border-primary);
+  inline-size: 100%;
 }
 
 .input-label {
   position: absolute;
-  left: 0;
-  top: 50%;
   color: var(--text-color-secondary);
+  inset-block-start: 50%;
+  inset-inline-start: 0;
   pointer-events: none;
   transform: translateY(-50%);
   transition:
     transform 0.2s ease-in-out,
-    top 0.2s ease-in-out,
+    inset-block-start 0.2s ease-in-out,
     font-size 0.2s ease-in-out;
 }
 
 .input-element:not(:placeholder-shown) + .input-label,
 .input-element:focus + .input-label {
-  top: 0;
-  transform: translateY(-0.625rem);
-  font-size: 0.5625rem;
   color: var(--text-color-secondary);
+  font-size: 0.5625rem;
+  inset-block-start: 0;
+  transform: translateY(-0.625rem);
 }

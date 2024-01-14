@@ -5,12 +5,12 @@ import dns from 'dns';
 dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
-  //@ts-ignore
+  // @ts-ignore
   plugins: [handlebars()],
-   build: {
-    outDir: 'dist'
-   },
-   server: {
+  build: {
+    outDir: 'dist',
+  },
+  server: {
     port: 3000,
   },
-})
+});
