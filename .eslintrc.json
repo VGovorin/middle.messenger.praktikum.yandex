@@ -22,6 +22,8 @@
     "class-methods-use-this": "off",
     "no-use-before-define": "off",
     "no-restricted-exports": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "func-names": "off",
+    "no-console": "off"
   }
 }
