@@ -16,6 +16,7 @@
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "sourceMap": true,
+    "strictNullChecks": true,
     "paths": {
       "@/*": ["./src/*"]
     }
