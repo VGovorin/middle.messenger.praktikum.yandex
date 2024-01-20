@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["airbnb", "eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["airbnb-base", "eslint:recommended", "plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "sourceType": "module"

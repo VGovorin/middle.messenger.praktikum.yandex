@@ -6,10 +6,10 @@ import { resolve } from 'path';
 dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
-  // @ts-expect-error
-  // @typescript-eslint/ban-ts-comment
-  // vite-plugin-handlebars 1.6.0
-  plugins: [handlebars()],
+  plugins: [
+    // @ts-expect-error
+    handlebars(),
+  ],
   build: {
     outDir: 'dist',
   },
