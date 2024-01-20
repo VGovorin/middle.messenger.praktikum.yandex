@@ -35,13 +35,13 @@ export const login = (value: string): ErrorType => {
 export const password = (value: string): ErrorType => {
   if (value.length === 0) {
     return {
-      errorMessage: 'Field PASSWORD can not be empty',
+      errorMessage: 'Field password can not be empty',
       errorStatus: true,
     };
   }
   if (value.length < 3) {
     return {
-      errorMessage: `Length of PASSWORD should not be less 3 letters.`,
+      errorMessage: `Length of password should not be less 3 letters.`,
       errorStatus: true,
     };
   }
@@ -108,13 +108,13 @@ export const name = (value: string): ErrorType => {
 export const reEnterPassword = (value: string): ErrorType => {
   if (value.length === 0) {
     return {
-      errorMessage: 'Field reEnterPassword can not be empty',
+      errorMessage: 'Field re enter password can not be empty',
       errorStatus: true,
     };
   }
   if (value.length < 3) {
     return {
-      errorMessage: `Length of reEnterPassword should not be less 3 letters.`,
+      errorMessage: `Length of re enter password should not be less 3 letters.`,
       errorStatus: true,
     };
   }
@@ -157,7 +157,10 @@ export const phone = (value: string): ErrorType => {
 
 export const message = (value: string): ErrorType => {
   if (value.length === 0) {
-    return { errorMessage: 'Field phone can not be empty', errorStatus: true };
+    return {
+      errorMessage: 'Field message can not be empty',
+      errorStatus: true,
+    };
   }
   return { errorMessage: '', errorStatus: false };
 };
