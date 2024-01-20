@@ -12,6 +12,7 @@ interface IProps {
     firstName: ValidateDataFn;
     secondName: ValidateDataFn;
     phone: ValidateDataFn;
+    reEnterPassword: ValidateDataFn;
   };
   onLogin: (event: PointerEvent) => void;
 }
@@ -27,6 +28,7 @@ export class SignUp extends Block<IProps> {
         firstName: validators.name,
         secondName: validators.name,
         phone: validators.phone,
+        reEnterPassword: validators.reEnterPassword,
       },
 
       onLogin: (event: PointerEvent) => {

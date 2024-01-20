@@ -118,6 +118,17 @@ export const reEnterPassword = (value: string): ErrorType => {
       errorStatus: true,
     };
   }
+
+  const regExp = /^(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,40}$/;
+  const compare = regExp.test(value);
+  if (!compare) {
+    return {
+      errorMessage:
+        'From 8 to 40 characters, at least one capital letter and a number.',
+      errorStatus: true,
+    };
+  }
+
   return { errorMessage: '', errorStatus: false };
 };
 
