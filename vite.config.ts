@@ -7,7 +7,7 @@ dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
   plugins: [
-    // @ts-expect-error
+    // @ts-expect-error: vite-plugin-handlebars v. 1.6.0 not update
     handlebars(),
   ],
   build: {
