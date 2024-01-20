@@ -7,6 +7,8 @@ dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
   // @ts-expect-error
+  // @typescript-eslint/ban-ts-comment
+  // vite-plugin-handlebars 1.6.0
   plugins: [handlebars()],
   build: {
     outDir: 'dist',
