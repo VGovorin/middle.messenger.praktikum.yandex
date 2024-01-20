@@ -154,3 +154,10 @@ export const phone = (value: string): ErrorType => {
 
   return { errorMessage: '', errorStatus: false };
 };
+
+export const message = (value: string): ErrorType => {
+  if (value.length === 0) {
+    return { errorMessage: 'Field phone can not be empty', errorStatus: true };
+  }
+  return { errorMessage: '', errorStatus: false };
+};

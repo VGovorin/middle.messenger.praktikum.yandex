@@ -32,19 +32,3 @@
 .attach-button:hover .icon-attach {
   --fill-color-sprite: var(--attach-file-icon-sprite-color-active);
 }
-
-.label-message-chat {
-  flex-grow: 1;
-}
-
-.input-message-chat {
-  padding: 0.635rem var(--chat-room-footer-x-spacing);
-  border-radius: 1.875rem;
-  background-color: var(--input-message-chat-background);
-  inline-size: 100%;
-}
-
-.send-message-button .icon-send-message {
-  display: block;
-  transform: rotate(-180deg);
-}

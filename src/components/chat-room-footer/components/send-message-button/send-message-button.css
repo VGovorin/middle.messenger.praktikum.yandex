@@ -1,0 +1,4 @@
+.send-message-button .icon-send-message {
+  display: block;
+  transform: rotate(-180deg);
+}
