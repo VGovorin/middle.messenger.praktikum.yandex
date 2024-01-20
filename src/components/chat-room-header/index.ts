@@ -1,1 +1,1 @@
-export { default as ChatRoomHeader } from './chat-room-header.hbs?raw';
+export { ChatRoomHeader } from './chat-room-header';

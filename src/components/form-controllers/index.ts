@@ -1,1 +1,1 @@
-export { default as FormControllers } from './form-controllers.hbs?raw';
+export { FormControllers } from './form-controllers';

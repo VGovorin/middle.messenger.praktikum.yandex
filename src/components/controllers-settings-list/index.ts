@@ -1,1 +1,1 @@
-export { default as ControllersSettingsList } from './controllers-settings-list.hbs?raw';
+export { ControllersSettingsList } from './controllers-settings-list';

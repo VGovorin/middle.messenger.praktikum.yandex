@@ -1,1 +1,1 @@
-export { default as MessageError } from './message-error.hbs?raw';
+export { MessageError } from './message-error';

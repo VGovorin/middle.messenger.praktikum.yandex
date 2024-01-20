@@ -1,1 +1,1 @@
-export { default as ChangePasswordList } from './change-password-list.hbs?raw';
+export { ChangePasswordList } from './change-password-list';

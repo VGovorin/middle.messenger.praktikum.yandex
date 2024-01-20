@@ -1,1 +1,1 @@
-export { default as ServerError } from './server-error.hbs?raw';
+export { ServerError } from './server-error';

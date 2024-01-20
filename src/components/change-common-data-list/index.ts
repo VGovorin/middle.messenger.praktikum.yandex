@@ -1,1 +1,1 @@
-export { default as ChangeCommonDataList } from './change-common-data-list.hbs?raw';
+export { ChangeCommonDataList } from './change-common-data-list';

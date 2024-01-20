@@ -1,1 +1,1 @@
-export { default as UserMessageWrapper } from './user-message-wrapper.hbs?raw';
+export { UserMessageWrapper } from './user-message-wrapper';

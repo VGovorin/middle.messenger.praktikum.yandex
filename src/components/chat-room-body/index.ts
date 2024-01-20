@@ -1,1 +1,1 @@
-export { default as ChatRoomBody } from './chat-room-body.hbs?raw';
+export { ChatRoomBody } from './chat-room-body';

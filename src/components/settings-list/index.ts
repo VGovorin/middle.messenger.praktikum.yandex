@@ -1,1 +1,1 @@
-export { default as SettingsList } from './settings-list.hbs?raw';
+export { SettingsList } from './settings-list';

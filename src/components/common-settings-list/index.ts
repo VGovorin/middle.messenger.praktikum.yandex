@@ -1,1 +1,1 @@
-export { default as CommonSettingsList } from './common-settings-list.hbs?raw';
+export { CommonSettingsList } from './common-settings-list';

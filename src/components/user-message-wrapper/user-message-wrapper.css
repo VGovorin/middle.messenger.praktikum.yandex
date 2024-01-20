@@ -24,6 +24,11 @@
   background-color: var(--outgoing-message-background);
 }
 
+.meta-data-chat-message-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .meta-data-chat-message {
   color: var(--text-color-secondary);
   font-size: 0.5625rem;
