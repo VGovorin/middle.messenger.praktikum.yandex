@@ -6,7 +6,7 @@ import { resolve } from 'path';
 dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig({
-  // @ts-ignore
+  // @ts-expect-error
   plugins: [handlebars()],
   build: {
     outDir: 'dist',
