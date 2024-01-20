@@ -104,7 +104,10 @@ export class Block<Props extends object, Refs extends RefType = RefType> {
     }
   }
 
-  protected componentDidUpdate(_oldProps: any, _newProps: any) {
+  protected componentDidUpdate(oldProps: any, newProps: any) {
+    if (oldProps === newProps) {
+      return false;
+    }
     return true;
   }
 
