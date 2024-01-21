@@ -39,7 +39,7 @@ export class ChangePasswordList extends Block<{}> {
 
   protected render(): string {
     return `
-      <div class="qwerqwer">
+      <div class="container-settings-list">
         {{# SettingsList}}
           <li class="user-data-item">
             <label for="old-password" class="text user-data-description">Old Password</label>
