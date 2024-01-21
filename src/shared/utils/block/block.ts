@@ -12,7 +12,10 @@ export interface BlockClass<P extends object, R extends RefType>
   componentName?: string;
 }
 
-export class Block<Props extends object, Refs extends RefType = RefType> {
+export class Block<
+  Props extends Record<string, any>,
+  Refs extends RefType = RefType,
+> {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -98,13 +101,13 @@ export class Block<Props extends object, Refs extends RefType = RefType> {
     );
   }
 
-  private _componentDidUpdate(oldProps: any, newProps: any) {
+  private _componentDidUpdate(oldProps: Props, newProps: Props) {
     if (this.componentDidUpdate(oldProps, newProps)) {
       this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
     }
   }
 
-  protected componentDidUpdate(oldProps: any, newProps: any) {
+  protected componentDidUpdate(oldProps: Props, newProps: Props) {
     if (oldProps === newProps) {
       return false;
     }
@@ -198,18 +201,18 @@ export class Block<Props extends object, Refs extends RefType = RefType> {
     return this._element;
   }
 
-  _makePropsProxy(props: any) {
+  _makePropsProxy(props: Props) {
     const self = this;
 
     return new Proxy(props, {
-      get(target, prop) {
+      get(target, prop: string) {
         const value = target[prop];
         return typeof value === 'function' ? value.bind(target) : value;
       },
       set(target, prop, value) {
         const oldTarget = { ...target };
 
-        target[prop] = value;
+        target[prop as keyof Props] = value;
 
         self.eventBus().emit(Block.EVENTS.FLOW_CDU, oldTarget, target);
         return true;

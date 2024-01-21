@@ -25,8 +25,8 @@ interface ListOfPagesWithContext {
 }
 
 export const listOfPagesWithContext: ListOfPagesWithContext = {
-  [PAGES.SIGN_IN]: [Pages.SignIn, { title: 'Sign In' }],
-  [PAGES.SIGN_UP]: [Pages.SignUp, { title: 'Sign Un' }],
+  [PAGES.SIGN_IN]: [Pages.SignIn as typeof Block, { title: 'Sign In' }],
+  [PAGES.SIGN_UP]: [Pages.SignUp as typeof Block, { title: 'Sign Un' }],
   [PAGES.NOT_FOUND]: [
     Pages.NotFound,
     {
