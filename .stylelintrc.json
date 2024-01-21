@@ -1,0 +1,21 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-idiomatic-order"],
+  "plugins": [
+    "stylelint-no-nested-media",
+    "stylelint-rem-over-px",
+    "stylelint-plugin-logical-css",
+    "stylelint-plugin-defensive-css"
+  ],
+  "rules": {
+    "pitcher/no-nested-media": true,
+    "rem-over-px/rem-over-px": true,
+    "plugin/use-defensive-css": true,
+    "plugin/use-logical-properties-and-values": [
+      true,
+      { "severity": "warning", "ignore": ["overflow-y", "overflow-x"] }
+    ],
+    "plugin/use-logical-units": [true, { "severity": "warning" }],
+    "custom-property-pattern": null,
+    "value-no-vendor-prefix": null
+  }
+}

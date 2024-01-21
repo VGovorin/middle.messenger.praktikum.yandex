@@ -1,1 +1,1 @@
-export { default as Profile } from './profile.hbs?raw';
+export { Profile } from './profile';

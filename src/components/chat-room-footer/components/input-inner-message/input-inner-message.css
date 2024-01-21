@@ -1,0 +1,6 @@
+.input-message-chat {
+  padding: 0.635rem var(--chat-room-footer-x-spacing);
+  border-radius: 1.875rem;
+  background-color: var(--input-message-chat-background);
+  inline-size: 100%;
+}

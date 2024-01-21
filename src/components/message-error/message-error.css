@@ -6,5 +6,5 @@
 .error-message-container .error-message-text {
   font-size: 1.25rem;
   line-height: 1.25rem;
-  margin-bottom: 4.3rem;
+  margin-block-end: 4.3rem;
 }

@@ -1,6 +1,6 @@
 .wrapper-message {
-  max-width: 25.125rem;
-  width: fit-content;
+  inline-size: fit-content;
+  max-inline-size: 25.125rem;
 }
 
 .wrapper-outgoing-message {
@@ -12,8 +12,8 @@
 }
 
 .inner-wrapper-message {
-  max-width: 25.125rem;
-  margin-bottom: 0.35rem;
+  margin-block-end: 0.35rem;
+  max-inline-size: 25.125rem;
 }
 
 .incoming-message-text {
@@ -24,27 +24,32 @@
   background-color: var(--outgoing-message-background);
 }
 
+.meta-data-chat-message-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .meta-data-chat-message {
-  padding-right: 0.75rem;
-  text-align: right;
+  color: var(--text-color-secondary);
   font-size: 0.5625rem;
   font-weight: 500;
   line-height: 0.5625rem;
-  color: var(--text-color-secondary);
+  padding-inline-end: 0.75rem;
+  text-align: end;
 }
 
 .attach-image-wrapper {
-  width: 19.75rem;
-  height: 13.1875rem;
-  margin-bottom: 0.35rem;
-  border-radius: 0.75rem;
-  border: 1px solid var(--border-bottom-color);
   overflow: hidden;
+  border: 1px solid var(--border-bottom-color);
+  border-radius: 0.75rem;
+  block-size: 13.1875rem;
+  inline-size: 19.75rem;
+  margin-block-end: 0.35rem;
 }
 
 .attach-image {
-  width: 100%;
-  height: auto;
+  block-size: auto;
+  inline-size: 100%;
 }
 
 .icon-indicator-message-status-unread {
@@ -52,14 +57,14 @@
 }
 
 .icon-indicator-message-status-read {
-  --stroke-color-sprite: var(--icon-indicator-message-status-read);  
+  --stroke-color-sprite: var(--icon-indicator-message-status-read);
 }
 
-.message-text { 
+.message-text {
   padding: 0.695rem;
   border-radius: 0.75rem;
+  color: var(--text-color-message);
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 0.9375rem;
-  color: var(--text-color-message);
 }

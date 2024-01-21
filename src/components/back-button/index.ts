@@ -1,1 +1,1 @@
-export { default as BackButton } from './back-button.hbs?raw';
+export { BackButton } from './back-button';

@@ -1,1 +1,1 @@
-export { default as SelectChat } from './select-chat.hbs?raw';
+export { SelectChat } from './select-chat';

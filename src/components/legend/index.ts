@@ -1,1 +1,1 @@
-export { default as Legend } from './legend.hbs?raw';
+export { Legend } from './legend';

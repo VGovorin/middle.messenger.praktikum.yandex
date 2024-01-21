@@ -1,0 +1,7 @@
+.container-settings-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.75rem;
+  inline-size: 100%;
+}

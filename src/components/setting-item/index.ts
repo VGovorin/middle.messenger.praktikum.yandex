@@ -1,1 +1,1 @@
-export { default as SettingItem } from './setting-item.hbs?raw';
+export { SettingItem } from './setting-item';

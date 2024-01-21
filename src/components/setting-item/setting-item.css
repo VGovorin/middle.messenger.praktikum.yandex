@@ -2,16 +2,16 @@
   display: flex;
   justify-content: space-between;
   padding: 0.62rem 0;
-  border-bottom: 1px solid var(--border-bottom-color);
+  border-block-end: 1px solid var(--border-bottom-color);
 }
 
 .user-data-item:first-child {
-  padding-top: 0;
+  padding-block-start: 0;
 }
 
 .user-data-item:last-child {
-  padding-bottom: 0;
   border: none;
+  padding-block-end: 0;
 }
 
 .user-data-item .user-data-description {

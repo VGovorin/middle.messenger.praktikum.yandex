@@ -1,1 +1,1 @@
-export { default as Fieldset } from './fieldset.hbs?raw';
+export { Fieldset } from './fieldset';

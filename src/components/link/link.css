@@ -1,10 +1,10 @@
 .link {
-  width: 100%;
-  text-align: center;
+  color: var(--text-color-blue);
   font-size: 0.6875rem;
-  line-height: 0.6875rem;
   font-weight: 500;
-  color: var(--text-color-blue);;
+  inline-size: 100%;
+  line-height: 0.6875rem;
+  text-align: center;
 }
 
 .link:hover {
@@ -12,8 +12,8 @@
 }
 
 .user-data-item .link-profile-settings {
-  text-align: left;
   font-size: 0.8125rem;
   font-weight: 500;
   line-height: 0.8125rem;
+  text-align: start;
 }

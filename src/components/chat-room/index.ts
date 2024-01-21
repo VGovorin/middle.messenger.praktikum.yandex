@@ -1,1 +1,1 @@
-export { default as ChatRoom } from './chat-room.hbs?raw';
+export { ChatRoom } from './chat-room';

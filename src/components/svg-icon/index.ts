@@ -1,1 +1,1 @@
-export { default as SvgIcon } from './svg-icon.hbs?raw';
+export { SvgIcon } from './svg-icon';

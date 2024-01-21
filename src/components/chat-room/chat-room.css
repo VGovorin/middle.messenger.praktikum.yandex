@@ -2,6 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  block-size: 100vb;
   grid-column: 2 / 2;
-  height: 100vh;
 }

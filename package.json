@@ -9,13 +9,35 @@
     "dev": "vite",
     "start": "tsc && vite build && vite preview --port 3000",
     "start:prod": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "lint:stylelint": "stylelint **/*.css",
+    "lint:stylelint-fix": "stylelint **/*.css --fix",
+    "format": "prettier --check --ignore-path .prettierignore .",
+    "format:fix": "prettier --ignore-path .prettierignore --write ."
   },
   "devDependencies": {
     "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
     "handlebars": "^4.7.8",
+    "prettier": "3.2.2",
+    "stylelint": "^16.1.0",
+    "stylelint-config-idiomatic-order": "^10.0.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-no-nested-media": "^0.1.0",
+    "stylelint-plugin-defensive-css": "^1.0.1",
+    "stylelint-plugin-logical-css": "^1.0.0",
+    "stylelint-rem-over-px": "^1.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
     "vite-plugin-handlebars": "^1.6.0"
+  },
+  "dependencies": {
+    "nanoid": "^5.0.4"
   }
 }

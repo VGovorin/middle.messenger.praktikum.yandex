@@ -1,36 +1,21 @@
-import Handlebars from 'handlebars';
-import * as Pages from './pages';
-import * as Components from './components';
-
-interface PageContext {
-  title: string;
-}
-
-const pages = {
-  'sign-in': [Pages.SignIn, { title: 'Sign In' }],
-  'sign-up': [Pages.SignUp, { title: 'Sign Up' }],
-  'not-found': [Pages.NotFound, { title: '404', message: 'Not Found Page', label: 'Back to Chats', type: 'error' }],
-  'server-error': [Pages.NotFound, { title: '500', message: "We're already fixing", label: 'Back to Chats', type: 'error' }],
-  'profile': [Pages.Profile, { title: 'Profile' }],
-  'change-common-data': [Pages.ChangeCommonData, { title: 'Change Common Data' }],
-  'change-password': [Pages.ChangePassword, { title: 'Change Password' }],
-  'select-chat': [Pages.SelectChat, { title: 'Select Chat' }],
-  'chat': [Pages.Chat, { title: 'Chat' }],
-};
+import * as Components from '@/components';
+import { registerComponent } from '@/shared/utils/register-component';
+import { navigate } from '@/shared/utils/navigate';
+import { Block } from '@/shared/utils/block';
+import {
+  PAGES,
+  listOfPagesWithContext,
+} from '@/shared/project-constants/pages';
 
 Object.entries(Components).forEach(([name, component]) => {
-  Handlebars.registerPartial(name, component);
+  registerComponent(name, component as typeof Block);
 });
 
 const onClick = (e: MouseEvent) => {
   const link = e.target as HTMLAnchorElement;
-  const root = document.getElementById('app');
-  const dataPageName = link.dataset.pageName;
-  const [source, context] = pages[dataPageName as keyof typeof pages];
+  const dataPageName = link.dataset.pageName as PAGES | undefined;
 
-  if (root) {
-    root.innerHTML = Handlebars.compile(source)(context);
-  };
+  navigate(dataPageName || PAGES.SIGN_IN);
 };
 
 const getListPages = () => {
@@ -39,7 +24,7 @@ const getListPages = () => {
   const ul = document.createElement('ul');
   ul.classList.add('page-list');
 
-  Object.entries(pages).forEach(([page, context]) => {
+  Object.entries(listOfPagesWithContext).forEach(([page, context]) => {
     const [, data] = context;
     const li = document.createElement('li');
     li.classList.add('page-item');
@@ -47,7 +32,7 @@ const getListPages = () => {
     a.dataset.pageName = page;
     a.addEventListener('click', onClick);
     a.href = '#';
-    a.textContent = `${(data as PageContext).title} page`;
+    a.textContent = `${data.title} page`;
     li.appendChild(a);
     ul.appendChild(li);
   });

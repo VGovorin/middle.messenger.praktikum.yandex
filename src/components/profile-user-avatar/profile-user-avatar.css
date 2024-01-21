@@ -3,36 +3,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 8.125rem;
-  height: 8.125rem;
   background-color: var(--backing-avatar-background);
+  block-size: 8.125rem;
   clip-path: circle(50%);
   cursor: pointer;
+  inline-size: 8.125rem;
 }
 
 .user-name {
-  margin-top: 1.3rem;
   font-size: 1rem;
   font-weight: 600;
   line-height: 1rem;
+  margin-block-start: 1.3rem;
 }
 
 .change-avatar-wrapper {
   position: absolute;
-  left: 0;
-  top: 0;
   background-color: var(--change-avatar-backing);
-  width: 100%;
-  height: 100%;
+  block-size: 100%;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 
 .change-avatar-text {
   position: absolute;
-  top: 50%;
-  left: 50%;
   color: var(--text-color-white);
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   text-align: center;
   transform: translate(-50%, -50%);
 }

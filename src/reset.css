@@ -21,10 +21,10 @@ input,
 button,
 textarea,
 select {
-  border: none;
-  font: inherit;
   padding: 0;
+  border: none;
   background-color: transparent;
+  font: inherit;
 }
 
 input:focus {
