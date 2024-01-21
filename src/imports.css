@@ -30,3 +30,5 @@
 @import url('/src/components/chat-room-footer/components/input-inner-message/input-inner-message.css');
 @import url('/src/components/chat-room-footer/components/input-message/input-message.css');
 @import url('/src/components/chat-room-footer/components/send-message-button/send-message-button.css');
+@import url('/src/components/change-common-data-list/change-common-data-list.css');
+@import url('/src/components/common-settings-list/common-settings-list.css');

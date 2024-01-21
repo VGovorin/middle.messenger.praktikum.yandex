@@ -9,9 +9,8 @@ export class ChangePassword extends Block<{}> {
           <form class="inner-container">
             {{{ ProfileUserAvatar user-name="Ivan" }}}
             {{{ ChangePasswordList }}}
-            {{{ Button label="Save" type="primary" page="list" onClick=onLogin }}}
           </form>
-        </div>
+        </div> 
       </main>
       `;
   }

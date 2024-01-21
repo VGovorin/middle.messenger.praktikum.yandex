@@ -31,3 +31,4 @@ export { ErrorLine } from './error-line';
 export { InputInnerMessage } from './chat-room-footer/components/input-inner-message';
 export { InputMessage } from './chat-room-footer/components/input-message';
 export { SendMessageButton } from './chat-room-footer/components/send-message-button';
+export { SettingItemInputInner } from './setting-item-input-inner';
