@@ -128,7 +128,7 @@ export class Block<Props extends object, Refs extends RefType = RefType> {
 
   componentWillUnmount() {}
 
-  setProps = (nextProps: any) => {
+  setProps = (nextProps: Props) => {
     if (!nextProps) {
       return;
     }
