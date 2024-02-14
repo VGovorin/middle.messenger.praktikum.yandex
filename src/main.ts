@@ -4,6 +4,9 @@ import { Block } from '@/shared/utils/block';
 import { AppState } from '@/types';
 import { Store } from '@/shared/utils/store';
 import { initApp } from '@/shared/services/init-app';
+import { listOfPages } from '@/shared/project-constants/pages';
+import { Router } from '@/shared/utils/router';
+import { BlockClass } from '@/shared/utils/block/block';
 
 declare global {
   interface Window {
@@ -28,5 +31,10 @@ Object.entries(Components).forEach(([name, component]) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  Object.entries(listOfPages).forEach(([path, page]) => {
+    Router.use(path, page as BlockClass<{}>);
+  });
+  Router.start();
+
   initApp();
 });

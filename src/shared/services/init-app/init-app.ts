@@ -1,7 +1,7 @@
 import { PAGES } from '@/shared/project-constants/pages';
 import { getUser } from '@/shared/services/auth';
 import { getChats } from '@/shared/services/chats';
-import { navigate } from '@/shared/utils/navigate';
+import { Router } from '@/shared/utils/router';
 
 const initApp = async () => {
   let me = null;
@@ -9,12 +9,12 @@ const initApp = async () => {
     me = await getUser();
   } catch (error) {
     console.log(error);
-    navigate(PAGES.SIGN_IN);
+    Router.go(PAGES.SIGN_IN);
     return;
   }
   const chats = await getChats();
   window.store.set({ user: me, chats });
-  navigate(PAGES.CHAT);
+  Router.go(PAGES.CHAT);
 };
 
 const initChatPage = async () => {

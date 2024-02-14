@@ -2,7 +2,7 @@ import { AuthApi } from '@/shared/lib/api/auth';
 import { PAGES } from '@/shared/project-constants/pages';
 import { apiHasError } from '@/shared/utils/api-has-error';
 import { transformUser } from '@/shared/utils/api-transformers';
-import { navigate } from '@/shared/utils/navigate';
+import { Router } from '@/shared/utils/router';
 import { CreateUser, LoginRequestData } from '@/types';
 
 const authApi = new AuthApi();
@@ -26,7 +26,7 @@ const signin = async (data: LoginRequestData) => {
   const me = await getUser();
 
   window.store.set({ user: me });
-  navigate(PAGES.CHAT);
+  Router.go(PAGES.CHAT);
 };
 
 const signup = async (data: CreateUser) => {
@@ -37,13 +37,13 @@ const signup = async (data: CreateUser) => {
 
   const me = await getUser();
   window.store.set({ user: me });
-  navigate(PAGES.CHAT);
+  Router.go(PAGES.CHAT);
 };
 
 const logout = async () => {
   await authApi.logout();
   window.store.set({ user: null, chats: [] });
-  navigate(PAGES.SIGN_IN);
+  Router.go(PAGES.SIGN_IN);
 };
 
 export { signin, signup, logout, getUser };
