@@ -1,3 +1,4 @@
+import { signup } from '@/shared/services/auth';
 import { Block } from '@/shared/utils/block';
 import * as validators from '@/shared/utils/validators';
 import { ErrorType } from '@/shared/utils/validators/validators';
@@ -44,6 +45,18 @@ export class SignUp extends Block<IProps> {
         if (!login) {
           return;
         }
+
+        signup({
+          login,
+          password,
+          email,
+          first_name: firstName,
+          phone,
+          second_name: secondName,
+        }).catch((error) => {
+          this.refs.error.setProps({ error });
+          console.log(error);
+        });
 
         console.log({
           email,

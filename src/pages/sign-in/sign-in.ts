@@ -1,3 +1,4 @@
+import { signin } from '@/shared/services/auth/auth';
 import { Block } from '@/shared/utils/block';
 import * as validators from '@/shared/utils/validators';
 import { ErrorType } from '@/shared/utils/validators/validators';
@@ -28,6 +29,11 @@ export class SignIn extends Block<IProps> {
         if (!login) {
           return;
         }
+
+        signin({
+          login,
+          password,
+        }).catch((error) => this.refs.error.setProps({ error }));
 
         console.log({
           login,

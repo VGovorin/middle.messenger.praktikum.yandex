@@ -1,9 +1,23 @@
 import { Block } from '@/shared/utils/block';
 
-export class UserMessageWrapper extends Block<{}> {
+interface IProps {
+  userId: number;
+}
+
+export class UserMessageWrapper extends Block<IProps> {
+  constructor(props: IProps) {
+    super({
+      ...props,
+    });
+  }
+
   protected render(): string {
+    const { userId } = this.props;
+    const typeOfMessage =
+      userId === window.store.getState().user?.id ? 'outgoing' : 'incoming';
+
     return `
-      <div class="{{#if message}}wrapper-message{{/if}} wrapper-{{type}}-message">
+      <div class="{{#if message}}wrapper-message{{/if}} wrapper-${typeOfMessage}-message">
         {{#if image}}
           <div class="attach-image-wrapper">
             <img
