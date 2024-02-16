@@ -5,7 +5,7 @@ interface IProps {
   onClick: () => void;
 }
 
-export class Link extends Block<IProps> {
+export class LogoutButton extends Block<IProps> {
   constructor(props: IProps) {
     super({
       ...props,
@@ -20,9 +20,7 @@ export class Link extends Block<IProps> {
 
   protected render(): string {
     return `
-      <a class="link link-{{type}}">
-          {{label}}
-      </a>
+      <button class="text exit-button">Exit</button>
       `;
   }
 }

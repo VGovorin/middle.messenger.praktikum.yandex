@@ -5,3 +5,15 @@
   block-size: 100vb;
   grid-column: 2 / 2;
 }
+
+.select-chat-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 100%;
+}
+
+.select-chat-container-message {
+  color: var(--text-color-secondary);
+  text-align: center;
+}

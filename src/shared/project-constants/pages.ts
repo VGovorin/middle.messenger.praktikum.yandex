@@ -1,15 +1,14 @@
 import * as Pages from '@/pages';
 
 export enum PAGES {
-  SIGN_IN = 'sign-in',
-  SIGN_UP = 'sign-up',
-  NOT_FOUND = 'not-found',
-  SERVER_ERROR = 'server-error',
-  PROFILE = 'profile',
-  CHANGE_PASSWORD = 'change-password',
-  CHANGE_COMMON_DATA = 'change-common-data',
-  SELECT_CHAT = 'select-chat',
-  CHAT = 'chat',
+  SIGN_IN = '/sign-in',
+  SIGN_UP = '/sign-up',
+  NOT_FOUND = '/not-found',
+  SERVER_ERROR = '/server-error',
+  PROFILE = '/profile',
+  CHANGE_PASSWORD = '/change-password',
+  CHANGE_COMMON_DATA = '/change-common-data',
+  CHAT = '/chat',
 }
 
 export const listOfPages = {
@@ -20,6 +19,5 @@ export const listOfPages = {
   [PAGES.PROFILE]: Pages.Profile,
   [PAGES.CHANGE_COMMON_DATA]: Pages.ChangeCommonData,
   [PAGES.CHANGE_PASSWORD]: Pages.ChangePassword,
-  [PAGES.SELECT_CHAT]: Pages.SelectChat,
   [PAGES.CHAT]: Pages.Chat,
 };

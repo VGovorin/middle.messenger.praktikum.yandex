@@ -1,3 +1,4 @@
+import { PAGES } from '@/shared/project-constants/pages';
 import { BlockClass } from '@/shared/utils/block/block';
 import { Route } from '@/shared/utils/route/route';
 
@@ -38,14 +39,14 @@ class Router {
     window.onpopstate = (event: PopStateEvent) => {
       if (event.currentTarget) {
         const currentTarget = event.currentTarget as Window;
-        this._onRoute(currentTarget.location.pathname);
+        this._onRoute(currentTarget.location.pathname as PAGES);
       }
     };
 
-    this._onRoute(window.location.pathname);
+    this._onRoute(window.location.pathname as PAGES);
   }
 
-  _onRoute(pathname: string) {
+  _onRoute(pathname: PAGES) {
     const route = this.getRoute(pathname);
     if (!route) {
       return;
@@ -59,7 +60,7 @@ class Router {
     route.render();
   }
 
-  go(pathname: string) {
+  go(pathname: PAGES) {
     this.history.pushState({}, '', pathname);
     this._onRoute(pathname);
   }
@@ -72,7 +73,7 @@ class Router {
     this.history.forward();
   }
 
-  getRoute(pathname: string) {
+  getRoute(pathname: PAGES) {
     return this.routes.find((route) => route.match(pathname));
   }
 }

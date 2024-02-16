@@ -32,3 +32,6 @@ export { InputInnerMessage } from './chat-room-footer/components/input-inner-mes
 export { InputMessage } from './chat-room-footer/components/input-message';
 export { SendMessageButton } from './chat-room-footer/components/send-message-button';
 export { SettingItemInputInner } from './setting-item-input-inner';
+export { LinkProfile } from './sidebar-header/components/link-profile';
+export { LogoutButton } from './controllers-settings-list/components/logout-button';
+export { UserAvatar } from './profile-user-avatar/components/user-avatar';

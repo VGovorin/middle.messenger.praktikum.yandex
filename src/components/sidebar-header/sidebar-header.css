@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: flex-end;
   color: var(--text-color-secondary);
+  cursor: pointer;
   gap: 0.5rem;
   margin-block-end: 1.44rem;
   text-align: end;

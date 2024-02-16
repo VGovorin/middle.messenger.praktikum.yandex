@@ -5,11 +5,9 @@ interface IProps {
   onClick: () => void;
 }
 
-export class Link extends Block<IProps> {
+export class LinkProfile extends Block<IProps> {
   constructor(props: IProps) {
-    super({
-      ...props,
-    });
+    super(props);
   }
 
   protected init(): void {
@@ -20,8 +18,11 @@ export class Link extends Block<IProps> {
 
   protected render(): string {
     return `
-      <a class="link link-{{type}}">
-          {{label}}
+      <a
+        class="text-fs-12 profile-link"
+        link="#"
+      >
+        Profile <span class="profile-link-arrow"></span>
       </a>
       `;
   }

@@ -32,8 +32,8 @@ const createChat = async (title: string) => {
   window.store.set({ chats });
 };
 
-const createWSChat = async (chatid: number, user: User) => {
-  const response = await createWebSocket(chatid, user);
+const createWSChat = async (chatId: number, user: User) => {
+  const response = await createWebSocket(chatId, user);
   if (apiHasError(response)) {
     throw Error(response.reason);
   }

@@ -15,8 +15,7 @@ export const login = (value: string): ErrorType => {
     };
   }
 
-  const regExp =
-    /^(?:[А-ЯA-Z][а-яa-z]+|[A-Z][a-z]+)(?:-[А-ЯA-Z][а-яa-z]+|[A-Z][a-z]+)*$/;
+  const regExp = /^(?=[a-zA-Z0-9_-]{3,20}$)(?!^[0-9_-]+$)[a-zA-Z0-9_-]+$/;
   const compare = regExp.test(value);
   if (!compare) {
     return {

@@ -6,27 +6,27 @@ export class CommonSettingsList extends Block<{}> {
       <ul class="list-item-wrapper">
         <li class="user-data-item">
           <p class="text user-data-description">Email</p>
-          <p class="text user-data">email@email.com</p>
+          <p class="text user-data">{{user.email}}</p>
          </li> 
         <li class="user-data-item">
           <p class="text user-data-description">Login</p>
-          <p class="text user-data">ivanivanov</p>
+          <p class="text user-data">{{user.login}}</p>
          </li> 
         <li class="user-data-item">
           <p class="text user-data-description">First Name</p>
-          <p class="text user-data">Ivan</p>
+          <p class="text user-data">{{user.firstName}}</p>
          </li> 
         <li class="user-data-item">
           <p class="text user-data-description">Last Name</p>
-          <p class="text user-data">Ivanov</p>
+          <p class="text user-data">{{user.secondName}}</p>
          </li> 
         <li class="user-data-item">
           <p class="text user-data-description">Display Name</p>
-          <p class="text user-data">Ivan</p>
+          <p class="text user-data">{{user.displayName}}</p>
          </li> 
         <li class="user-data-item">
           <p class="text user-data-description">Phone</p>
-          <p class="text user-data">+7 (909) 967 30 30</p>
+          <p class="text user-data">{{user.phone}}</p>
         </li> 
       </ul>
       `;

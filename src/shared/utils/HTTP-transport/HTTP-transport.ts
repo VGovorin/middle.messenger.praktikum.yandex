@@ -108,8 +108,11 @@ export class HTTPTransport {
 
       if (isGet || !data) {
         xhr.send();
+      } else if (data instanceof FormData) {
+        xhr.send(data);
       } else {
-        xhr.send(data instanceof FormData ? data : JSON.stringify(data));
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(data));
       }
     });
   };

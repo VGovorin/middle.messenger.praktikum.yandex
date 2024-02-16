@@ -95,3 +95,12 @@ export type Message = Pick<
   isRead: boolean;
   userId: number;
 };
+
+export type UserProfileDTO = {
+  first_name: string;
+  second_name: string;
+  display_name: string;
+  login: string;
+  email: string;
+  phone: string;
+};
