@@ -8,7 +8,9 @@
   inset-block-end: 1.875rem;
   inset-inline-end: 1.875rem;
   transform: translateY(5.125rem);
-  transition: transform ease-in-out 0.3s, transform ease-in-out 0.3s;
+  transition:
+    transform ease-in-out 0.3s,
+    transform ease-in-out 0.3s;
 }
 
 .create-new-chat::after {
