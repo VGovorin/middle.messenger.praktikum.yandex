@@ -19,8 +19,8 @@ export const login = (value: string): ErrorType => {
   const compare = regExp.test(value);
   if (!compare) {
     return {
-      errorMessage:
-        'The first letter must be capitalised, no spaces, no numbers, no special characters',
+      errorMessage: `From 3 to 20 characters, Latin, may contain numbers but not consist of them,
+        no spaces, no special characters (hyphen and underscore allowed)`,
       errorStatus: true,
     };
   }

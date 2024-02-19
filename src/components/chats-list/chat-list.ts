@@ -11,10 +11,10 @@ export class ChatsList extends Block<{}> {
           id=id
           unreadCount=unreadCount
           title=title
-          userName=userName
           message=message
           date=date
           notice=unreadCount
+          imageUrl=avatar
         }}}
       {{/each}}
     </ul>

@@ -1,0 +1,11 @@
+.chat-room-header-user-avatar-wrapper {
+  background-color: var(--backing-avatar-background);
+  block-size: 2.125rem;
+  clip-path: circle(50%);
+  cursor: pointer;
+  inline-size: 2.125rem;
+}
+
+.chat-room-header-user-avatar {
+  object-fit: cover;
+}

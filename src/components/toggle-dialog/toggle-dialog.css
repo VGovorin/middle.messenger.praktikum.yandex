@@ -1,0 +1,31 @@
+.btn-toggle-create-new-chat {
+  position: absolute;
+  block-size: 1.625rem;
+  inline-size: 1.625rem;
+  inset-block-start: 0.025rem;
+  inset-inline-end: 0.325rem;
+}
+
+.btn-toggle-create-new-chat:hover {
+  opacity: 0.8;
+}
+
+.btn-toggle-create-new-chat::after {
+  position: absolute;
+  background-color: var(--background-cross);
+  block-size: 0.725rem;
+  content: '';
+  inline-size: 0.0875rem;
+  opacity: 0.5; 
+  transform: rotate(45deg);
+}
+
+.btn-toggle-create-new-chat::before {
+  position: absolute;
+  background-color: var(--background-cross);
+  block-size: 0.725rem;
+  content: '';
+  inline-size: 0.0875rem;
+  opacity: 0.5;
+  transform: rotate(-45deg);
+}

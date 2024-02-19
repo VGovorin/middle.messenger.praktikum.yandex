@@ -42,7 +42,12 @@ const signup = async (data: CreateUser) => {
 
 const logout = async () => {
   await authApi.logout();
-  window.store.set({ user: null, chats: [] });
+  window.store.set({
+    user: null,
+    chats: [],
+    messages: [],
+    currentChatId: null,
+  });
   Router.go(PAGES.SIGN_IN);
 };
 

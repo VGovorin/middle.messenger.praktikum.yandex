@@ -1,5 +1,11 @@
 import { logout } from '@/shared/services/auth';
-import { createChat, createWSChat } from '@/shared/services/chats';
+import {
+  addUserToChat,
+  createChat,
+  createWSChat,
+  deleteUserFromChat,
+} from '@/shared/services/chats';
+import { deleteChat } from '@/shared/services/chats/chats';
 import { initChatPage } from '@/shared/services/init-app';
 import { Block } from '@/shared/utils/block';
 import { connect } from '@/shared/utils/connect';
@@ -12,12 +18,25 @@ interface Props {
   onSave: () => void;
   chats: Chat[];
   user: User;
+  toggleDialogCreateNewChat: () => void;
+  toggleDialogAddUserToChat: () => void;
+  toggleDialogDeleteUserFromChat: () => void;
+  handleAddUser: () => void;
+  handleDeleteUser: () => void;
+  handleClickRemoveChat: () => void;
+  currentChatId: number;
 }
 
 type Refs = {
   createChat: {
     getChatTitle: () => string;
     setError: (value: string) => void;
+  };
+  addUser: {
+    getLoginUser: () => string;
+  };
+  deleteUser: {
+    getLoginUser: () => string;
   };
 };
 
@@ -33,7 +52,7 @@ class Chat extends Block<Props, Refs> {
           isOpenDialogChat: true,
         });
       },
-      closeDialog: () => window.store.set({ isOpenDialogChat: false }),
+
       onSave: () => {
         const chatTitle = this.refs.createChat.getChatTitle();
         if (!chatTitle) {
@@ -42,9 +61,57 @@ class Chat extends Block<Props, Refs> {
           );
           return;
         }
-        createChat(chatTitle)
-          .then(() => window.store.set({ isOpenDialogChat: false }))
-          .catch((error) => this.refs.createChat.setError(error));
+        createChat(chatTitle).catch((error) =>
+          this.refs.createChat.setError(error),
+        );
+      },
+
+      toggleDialogCreateNewChat: () => {
+        const x = document.getElementById('dialog-create-new-chat');
+        x?.classList.toggle('display-none');
+      },
+
+      toggleDialogAddUserToChat: () => {
+        const x = document.getElementById('dialog-add-user');
+        x?.classList.toggle('display-none');
+      },
+
+      toggleDialogDeleteUserFromChat: () => {
+        const x = document.getElementById('dialog-delete-user');
+        x?.classList.toggle('display-none');
+      },
+
+      handleAddUser: () => {
+        const loginUser = this.refs.addUser.getLoginUser();
+        if (!loginUser) {
+          return;
+        }
+
+        addUserToChat({
+          users: [parseInt(loginUser, 10)],
+          chatId: this.props.currentChatId,
+        });
+      },
+
+      handleDeleteUser: () => {
+        const loginUser = this.refs.deleteUser.getLoginUser();
+        if (!loginUser) {
+          return;
+        }
+        deleteUserFromChat({
+          users: [parseInt(loginUser, 10)],
+          chatId: this.props.currentChatId,
+        });
+      },
+
+      handleClickRemoveChat: () => {
+        const { currentChatId } = window.store.getState();
+        if (currentChatId) {
+          deleteChat({
+            chatId: currentChatId,
+          });
+          window.store.set({ currentChatId: null });
+        }
       },
     });
     initChatPage();
@@ -52,17 +119,48 @@ class Chat extends Block<Props, Refs> {
 
   protected render(): string {
     return `
-      <main class="main-grid">
-        {{{ Sidebar chats=chats openDialog=openDialog }}}
-        {{{ ChatRoom
-          ref="message"
-          validate=validate.message
-          chats=chats
-          currentChatId=currentChatId
-          messages=messages
+      <div class="chat-container">
+        <main class="main-grid">
+          {{{ Sidebar
+            chats=chats
+            openDialog=openDialog
+            toggleDialogCreateNewChat=toggleDialogCreateNewChat
+          }}}
+          {{{ ChatRoom
+            ref="message"
+            validate=validate.message
+            chats=chats
+            currentChatId=currentChatId
+            messages=messages
+            toggleDialogAddUserToChat=toggleDialogAddUserToChat
+            toggleDialogDeleteUserFromChat=toggleDialogDeleteUserFromChat
+            handleClickRemoveChat=handleClickRemoveChat
+          }}}
+        </main>
+
+        {{{ DialogCreateNewChat
+          toggleDialogCreateNewChat=toggleDialogCreateNewChat
+          onSave=onSave
+          ref="createChat"
         }}}
-      </main>
-      `;
+        {{{ DialogHandleUser
+          toggleDialog=toggleDialogAddUserToChat
+          onSave=handleAddUser
+          label="Add"
+          title="Add New User"
+          ref="addUser"
+          class="dialog-add-user"
+        }}}
+        {{{ DialogHandleUser
+          toggleDialog=toggleDialogDeleteUserFromChat
+          onSave=handleDeleteUser
+          label="Delete"
+          title="Delete User"
+          ref="deleteUser"
+          class="dialog-delete-user"
+        }}}
+      </div>
+    `;
   }
 }
 

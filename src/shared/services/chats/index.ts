@@ -1,1 +1,8 @@
-export { createChat, getChats, createWSChat } from './chats';
+export {
+  createChat,
+  getChats,
+  createWSChat,
+  changeChatAvatar,
+  addUserToChat,
+  deleteUserFromChat,
+} from './chats';

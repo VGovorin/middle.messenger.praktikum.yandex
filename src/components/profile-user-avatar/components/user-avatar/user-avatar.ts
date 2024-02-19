@@ -1,3 +1,4 @@
+import { baseUrl } from '@/shared/lib/base-url';
 import { Block } from '@/shared/utils/block';
 import { User } from '@/types';
 
@@ -28,7 +29,7 @@ export class UserAvatar extends Block<IProps> {
             width="130"
             height="130"
             class="user-avatar"
-            src="https://ya-praktikum.tech/api/v2/resources${this.props.user.avatar}"
+            src="${baseUrl.HOST}/resources${this.props.user.avatar}"
           />
         </div>
         `

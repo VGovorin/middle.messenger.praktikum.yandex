@@ -49,7 +49,7 @@ export const createWebSocket = async (chatid: number, user: User) => {
     const data = JSON.parse(event.data);
     console.log('Получены данные', data);
 
-    if (data.type === 'pong') {
+    if (data.type === 'pong' || data.type === 'user connected') {
       return;
     }
 

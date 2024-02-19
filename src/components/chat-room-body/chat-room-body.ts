@@ -9,8 +9,7 @@ export class ChatRoomBody extends Block<{}> {
             type="incoming"
             userId=this.user_id
             message=this.content
-            datetime="2023-11-22 11:56"
-            date="11:56"
+            datetime=this.time
           }}}
         {{/each}}
       </div>

@@ -1,0 +1,26 @@
+.kebab-button {
+  overflow: hidden;
+  padding: 0.315rem 0.695rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.kebab-button .icon-kebab-menu {
+  display: block;
+}
+
+.kebab-button-active .icon-kebab-menu {
+  --fill-color-sprite: var(--kebab-icon-background-active);
+}
+
+.kebab-button:hover .icon-kebab-menu {
+  --fill-color-sprite: var(--kebab-icon-background-active);
+}
+
+.kebab-button-active {
+  background-color: var(--kebab-button-background-active);
+}
+
+.kebab-button:hover {
+  background-color: var(--kebab-button-background-active);
+}

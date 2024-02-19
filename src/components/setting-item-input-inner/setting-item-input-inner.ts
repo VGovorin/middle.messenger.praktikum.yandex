@@ -31,6 +31,7 @@ export class SettingItemInputInner extends Block<IProps> {
         value="${value}"
         ref
         onBlur
+        size="40"
       />
       `;
   }

@@ -104,3 +104,17 @@ export type UserProfileDTO = {
   email: string;
   phone: string;
 };
+
+export interface AddUserToChat {
+  users: number[];
+  chatId: number;
+}
+
+export interface ChatId {
+  chatId: number;
+}
+
+export interface Password {
+  oldPassword: string;
+  newPassword: string;
+}

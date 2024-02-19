@@ -1,0 +1,13 @@
+.dialog-handle-user-btn {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  gap: 0.9375rem;
+  inline-size: 100%;
+}
+
+.dialog-handle-user-btn:hover {
+  background-color: var(--background-hover-btn-controller);
+}

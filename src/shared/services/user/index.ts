@@ -1,1 +1,1 @@
-export { changeAvatar, changeProfile } from './user';
+export { changeAvatar, changeProfile, changePassword } from './user';

@@ -2,6 +2,7 @@ import { Block } from '@/shared/utils/block';
 
 interface IProps {
   userId: number;
+  datetime: string;
 }
 
 export class UserMessageWrapper extends Block<IProps> {
@@ -12,10 +13,11 @@ export class UserMessageWrapper extends Block<IProps> {
   }
 
   protected render(): string {
-    const { userId } = this.props;
+    const { userId, datetime } = this.props;
     const typeOfMessage =
       userId === window.store.getState().user?.id ? 'outgoing' : 'incoming';
 
+    const hours = `${new Date(datetime).getHours()}:${new Date(datetime).getMinutes()}`;
     return `
       <div class="{{#if message}}wrapper-message{{/if}} wrapper-${typeOfMessage}-message">
         {{#if image}}
@@ -36,7 +38,7 @@ export class UserMessageWrapper extends Block<IProps> {
         {{/if}}
         <div class="meta-data-chat-message-container">
           <span class="meta-data-chat-message">
-            <time datetime="2023-11-22 11:56">11:56</time>
+            <time datetime="{{datetime}}">${hours}</time>
           </span>
           {{#if messageStatusRead}}
             {{{ SvgIcon

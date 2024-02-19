@@ -2,7 +2,6 @@ import { Block } from '@/shared/utils/block';
 import { LastMessage } from '@/types';
 
 interface IProps {
-  userName?: string;
   imageUrl?: string;
   message?: string;
   date?: string;
@@ -29,18 +28,17 @@ export class ChatItem extends Block<IProps> {
   }
 
   protected render(): string {
-    const { userName, imageUrl, notice, lastMessage, title } = this.props;
+    const { imageUrl, notice, lastMessage, title } = this.props;
 
     return `
       <li class="chat-item">
         <div class="chat-item-left-container">
           <img
-            alt=${userName}
-            src=${imageUrl}
+            alt="${title}"
+            src="${imageUrl || '/plug.svg'}"
             class="chat-item-avatar"
             width="47"
             height="47"
-            onerror="this.onerror=null; this.src='/plug.svg'"
           />
         </div>
         <div class="chat-item-right-container">
@@ -58,7 +56,7 @@ export class ChatItem extends Block<IProps> {
             }
           </div>
           <div class="chat-item-inner-bottom-container">
-            <p class="text-fs-12 chat-item-message">${lastMessage?.content}</p>
+            <p class="text-fs-12 chat-item-message">${lastMessage?.content || ''}</p>
             {{#if notice}}
               <span class="chat-item-notice-wrapper">
                 <span class="chat-item-notice-inner">${notice}</span>

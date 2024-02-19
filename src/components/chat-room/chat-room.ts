@@ -5,7 +5,13 @@ export class ChatRoom extends Block<{}> {
     return `
       {{#if currentChatId}}
         <div class="chat-room-main">
-          {{{ ChatRoomHeader}}}
+          {{{ ChatRoomHeader
+            messages=messages
+            currentChatId=currentChatId
+            handleClickAddUser=toggleDialogAddUserToChat
+            handleClickDeleteUser=toggleDialogDeleteUserFromChat
+            handleClickRemoveChat=handleClickRemoveChat
+          }}}
           {{{ ChatRoomBody messages=messages }}}
           {{{ ChatRoomFooter onSend=onSend }}}
         </div>

@@ -1,5 +1,7 @@
+import { PAGES } from '@/shared/project-constants/pages';
 import { signup } from '@/shared/services/auth';
 import { Block } from '@/shared/utils/block';
+import { Router } from '@/shared/utils/router';
 import * as validators from '@/shared/utils/validators';
 import { ErrorType } from '@/shared/utils/validators/validators';
 
@@ -16,6 +18,7 @@ interface IProps {
     reEnterPassword: ValidateDataFn;
   };
   onLogin: (event: PointerEvent) => void;
+  handleClickGoToSignIn: () => void;
 }
 
 export class SignUp extends Block<IProps> {
@@ -68,6 +71,10 @@ export class SignUp extends Block<IProps> {
           reEnterPassword,
         });
       },
+
+      handleClickGoToSignIn: () => {
+        Router.go(PAGES.SIGN_IN);
+      },
     });
   }
 
@@ -76,7 +83,7 @@ export class SignUp extends Block<IProps> {
       <main class="container">
         {{#Form}}
           {{#Fieldset }}
-            {{{ Legend title=title }}}
+            {{{ Legend title="Sign Up" }}}
             <div class="form-items-wrapper">
               {{{ Input
                 type="email"
@@ -138,7 +145,7 @@ export class SignUp extends Block<IProps> {
           {{/Fieldset}}
           {{#FormControllers}}
             {{{ Button label="Create Account" type="primary" page="list" onClick=onLogin }}}
-            {{{ Link label="Sign In" href="#" }}}
+            {{{ Link onClick=handleClickGoToSignIn label="Sign In" href="#" }}}
           {{/FormControllers}}
         {{/Form}}
       </main>
