@@ -23,7 +23,7 @@ export class ChatRoomFooter extends Block<{}> {
 
   protected render(): string {
     return `
-      <form class="chat-room-footer">
+      <form id="form-chat-room-footer" class="chat-room-footer">
         <button
           id="attach-button"
           class="attach-button"

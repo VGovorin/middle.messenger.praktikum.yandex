@@ -2,6 +2,9 @@ import { HTTPTransport } from '@/shared/utils/HTTP-transport';
 import { User } from '@/types';
 
 const webSocketApi = new HTTPTransport('/chats');
+interface CollectionWithMessage extends HTMLFormControlsCollection {
+  message?: HTMLInputElement;
+}
 
 export const createWebSocket = async (chatid: number, user: User) => {
   const response = (await webSocketApi.post(
@@ -71,17 +74,19 @@ export const createWebSocket = async (chatid: number, user: User) => {
       console.log('Ошибка', error);
     }
 
-    const sendBtn = document.getElementById('send-message-button');
+    const form = document.getElementById(
+      'form-chat-room-footer',
+    ) as HTMLFormElement;
 
-    sendBtn?.addEventListener('click', () => {
-      const inputMessage = document.getElementById(
-        'input-message-chat',
-      ) as HTMLInputElement;
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const value = (form.elements as CollectionWithMessage).message?.value;
+      const message = value?.trim();
 
-      if (inputMessage.value) {
+      if (message) {
         socket.send(
           JSON.stringify({
-            content: inputMessage.value,
+            content: message,
             type: 'message',
           }),
         );

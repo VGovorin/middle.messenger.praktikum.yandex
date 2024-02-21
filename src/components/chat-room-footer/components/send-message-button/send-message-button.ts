@@ -11,7 +11,7 @@ export class SendMessageButton extends Block<IProps> {
       <button
         id="send-message-button"
         class="send-message-button"
-        type="button"
+        type="submit"
         aria-label="button"
         name="button"
       >
