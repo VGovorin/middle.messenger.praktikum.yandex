@@ -17,8 +17,7 @@ const initApp = async () => {
 
   if (
     window.location.pathname === PAGES.SIGN_IN ||
-    window.location.pathname === PAGES.SIGN_UP ||
-    window.location.pathname === '/'
+    window.location.pathname === PAGES.SIGN_UP
   ) {
     Router.go(PAGES.CHAT);
   }

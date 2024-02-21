@@ -1,14 +1,14 @@
 import * as Pages from '@/pages';
 
 export enum PAGES {
-  SIGN_IN = '/sign-in',
+  SIGN_IN = '/',
   SIGN_UP = '/sign-up',
   NOT_FOUND = '/not-found',
   SERVER_ERROR = '/server-error',
   PROFILE = '/profile',
   CHANGE_PASSWORD = '/change-password',
-  CHANGE_COMMON_DATA = '/change-common-data',
-  CHAT = '/chat',
+  CHANGE_COMMON_DATA = '/settings',
+  CHAT = '/messenger',
 }
 
 export const listOfPages = {
