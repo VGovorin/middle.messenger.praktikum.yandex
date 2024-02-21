@@ -36,7 +36,7 @@ export class DialogHandleUser extends Block<IProps> {
 
   protected render(): string {
     return `
-    <div id="{{class}}" class="{{class}} display-none">
+    <dialog id="{{class}}" class="{{class}} display-none">
       {{#Form}}
         {{{ ToggleDialog onClick=toggleDialog }}}
         {{# Fieldset}}
@@ -56,7 +56,7 @@ export class DialogHandleUser extends Block<IProps> {
         {{{ Button label=label type="primary" page="list" onClick=onSave }}}
       {{/FormControllers}}
       {{/Form}}
-    </div>
+    </dialog>
   `;
   }
 }

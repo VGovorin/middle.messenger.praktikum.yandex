@@ -36,7 +36,7 @@ export class DialogCreateNewChat extends Block<IProps> {
 
   protected render(): string {
     return `
-    <div id="dialog-create-new-chat" class="dialog-create-new-chat display-none">
+    <dialog id="dialog-create-new-chat" class="dialog-create-new-chat display-none">
       {{#Form}}
         {{{ ToggleDialog onClick=toggleDialogCreateNewChat }}}
         {{# Fieldset}}
@@ -56,7 +56,7 @@ export class DialogCreateNewChat extends Block<IProps> {
         {{{ Button label="Create" type="primary" page="list" onClick=onSave }}}
       {{/FormControllers}}
       {{/Form}}
-    </div>
+    </dialog>
   `;
   }
 }

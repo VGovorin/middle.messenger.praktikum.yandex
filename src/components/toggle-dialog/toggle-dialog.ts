@@ -19,6 +19,6 @@ export class ToggleDialog extends Block<IProps> {
   }
 
   protected render(): string {
-    return '<button class="btn-toggle-create-new-chat"></button>';
+    return '<button type="button" class="btn-toggle-create-new-chat"></button>';
   }
 }
