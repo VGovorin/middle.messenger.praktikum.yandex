@@ -46,25 +46,29 @@ export const createWebSocket = async (chatid: number, user: User) => {
   });
 
   socket.addEventListener('message', (event) => {
-    const data = JSON.parse(event.data);
-    console.log('Получены данные', data);
+    try {
+      const data = JSON.parse(event.data);
+      console.log('Получены данные', data);
 
-    if (data.type === 'pong' || data.type === 'user connected') {
-      return;
-    }
+      if (data.type === 'pong' || data.type === 'user connected') {
+        return;
+      }
 
-    const state = window.store.getState();
+      const state = window.store.getState();
 
-    if (Array.isArray(data)) {
-      window.store.set({
-        ...state,
-        messages: [...data.reverse()],
-      });
-    } else {
-      window.store.set({
-        ...state,
-        messages: [...state.messages, data],
-      });
+      if (Array.isArray(data)) {
+        window.store.set({
+          ...state,
+          messages: [...data.reverse()],
+        });
+      } else {
+        window.store.set({
+          ...state,
+          messages: [...state.messages, data],
+        });
+      }
+    } catch (error) {
+      console.log('Ошибка', error);
     }
 
     const sendBtn = document.getElementById('send-message-button');
@@ -74,12 +78,14 @@ export const createWebSocket = async (chatid: number, user: User) => {
         'input-message-chat',
       ) as HTMLInputElement;
 
-      socket.send(
-        JSON.stringify({
-          content: inputMessage.value,
-          type: 'message',
-        }),
-      );
+      if (inputMessage.value) {
+        socket.send(
+          JSON.stringify({
+            content: inputMessage.value,
+            type: 'message',
+          }),
+        );
+      }
     });
   });
 
