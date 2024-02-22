@@ -69,7 +69,7 @@ export class SettingItem extends Block<IProps, IRefs> {
             class="text change-input"
             type="${type}"
             name="${name}"
-            value="${value}"
+            value="${value || ''}"
             ref="input"
             onBlur=onBlur
           }}}

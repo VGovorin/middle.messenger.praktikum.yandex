@@ -5,7 +5,8 @@ export class Sidebar extends Block<{}> {
     return `
       <div class="sidebar">
         {{{ SidebarHeader }}}
-        {{{ ChatsList }}}
+        {{{ ChatsList chats=chats openDialog=openDialog }}}
+        {{{ CreateNewChat onClick=toggleDialogCreateNewChat }}}
       </div>
       `;
   }

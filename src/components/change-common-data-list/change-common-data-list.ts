@@ -1,3 +1,4 @@
+import { changeProfile } from '@/shared/services/user';
 import { Block } from '@/shared/utils/block';
 import * as validators from '@/shared/utils/validators';
 import { ErrorType } from '@/shared/utils/validators/validators';
@@ -42,6 +43,15 @@ export class ChangeCommonDataList extends Block<{}> {
           return;
         }
 
+        changeProfile({
+          email,
+          login,
+          first_name: firstName,
+          second_name: secondName,
+          phone,
+          display_name: displayName,
+        });
+
         console.log({
           login,
           email,
@@ -63,7 +73,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="email"
             name="email"
-            value="email@email.com"
+            value=user.email
             label="Email"
             ref="email"
             validate=validate.email
@@ -73,7 +83,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="text"
             name="login"
-            value="ivanivanov"
+            value=user.login
             label="Login"
             ref="login"
             validate=validate.login
@@ -83,7 +93,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="text"
             name="first_name"
-            value="Ivan"
+            value=user.firstName
             label="First Name"
             ref="first_name"
             validate=validate.firstName
@@ -93,7 +103,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="text"
             name="second_name"
-            value="Ivanov"
+            value=user.secondName
             label="Second Name"
             ref="second_name"
             validate=validate.secondName
@@ -103,7 +113,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="text"
             name="display_name"
-            value="Ivan"
+            value=user.displayName
             label="Display Name"
             ref="display_name"
             validate=validate.displayName
@@ -113,7 +123,7 @@ export class ChangeCommonDataList extends Block<{}> {
             class="text change-input"
             type="tel"
             name="phone"
-            value="+7 (909) 967 30 30"
+            value=user.phone
             label="Phone"
             ref="phone"
             validate=validate.phone

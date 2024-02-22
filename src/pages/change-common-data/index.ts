@@ -1,1 +1,1 @@
-export { ChangeCommonData } from './change-common-data';
+export { default as ChangeCommonData } from './change-common-data';

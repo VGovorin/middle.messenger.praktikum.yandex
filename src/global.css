@@ -39,6 +39,13 @@
   --kebab-icon-background-active: var(--blue_420);
   --icon-indicator-message-status-unread: var(--light-grey_080);
   --icon-indicator-message-status-read: var(--blue_420);
+  --create-new-chat-background: var(--blue_420);
+  --create-new-chat-plus: var(--white);
+  --form-background: var(--white);
+  --background-menu-handle-user: var(--white);
+  --background-hover-btn-controller: var(--black_alpha14);
+  --background-backing-dialog: var(--black_alpha50);
+  --background-cross: var(--black_880);
   --font-inter: 'inter';
 }
 
@@ -111,4 +118,8 @@ button {
   display: grid;
   align-items: start;
   grid-template-columns: minmax(0, 1fr) minmax(0, 3.65fr);
+}
+
+.chat-container {
+  position: relative;
 }

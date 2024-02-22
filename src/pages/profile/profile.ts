@@ -1,11 +1,34 @@
+import { PAGES } from '@/shared/project-constants/pages';
+import { logout } from '@/shared/services/auth';
 import { Block } from '@/shared/utils/block';
+import { connect } from '@/shared/utils/connect';
+import { Router } from '@/shared/utils/router';
 
-export class Profile extends Block<{}> {
-  constructor(props: { onClick: () => void }) {
+interface IProps {
+  handleClickBack: () => void;
+  handleClickChangeData: () => void;
+  handleClickChangePassword: () => void;
+  handleClickLogout: () => void;
+}
+
+class Profile extends Block<IProps> {
+  constructor(props: IProps) {
     super({
       ...props,
-      onClick: () => {
-        console.log('click back btn');
+      handleClickBack: () => {
+        Router.back();
+      },
+
+      handleClickChangeData: () => {
+        Router.go(PAGES.CHANGE_COMMON_DATA);
+      },
+
+      handleClickChangePassword: () => {
+        Router.go(PAGES.CHANGE_PASSWORD);
+      },
+
+      handleClickLogout: () => {
+        logout();
       },
     });
   }
@@ -13,15 +36,23 @@ export class Profile extends Block<{}> {
   protected render(): string {
     return `
       <main>
-        {{{ BackButton onClick=onClick }}}
+        {{{ BackButton onClick=handleClickBack }}}
         <div class="container">
           <div class="inner-container">
-            {{{ ProfileUserAvatar user-name="Ivan" }}}
-            {{{ CommonSettingsList }}}
-            {{{ ControllersSettingsList }}}
+            {{{ ProfileUserAvatar user=user }}}
+            {{{ CommonSettingsList user=user }}}
+            {{{ ControllersSettingsList
+              handleClickChangeData=handleClickChangeData
+              handleClickChangePassword=handleClickChangePassword
+              handleClickLogout=handleClickLogout
+            }}}
           </div>
         </div>
       </main>
       `;
   }
 }
+
+export default connect(({ user }) => ({
+  user,
+}))(Profile);

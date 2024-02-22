@@ -1,0 +1,41 @@
+.create-new-chat {
+  position: absolute;
+  background-color: var(--create-new-chat-background);
+  block-size: 2.5rem;
+  clip-path: circle(50%);
+  cursor: pointer;
+  inline-size: 2.5rem;
+  inset-block-end: 1.875rem;
+  inset-inline-end: 1.875rem;
+  transform: translateY(5.125rem);
+  transition:
+    transform ease-in-out 0.3s,
+    transform ease-in-out 0.3s;
+}
+
+.create-new-chat::after {
+  position: absolute;
+  background-color: var(--create-new-chat-plus);
+  block-size: 1.55rem;
+  content: '';
+  inline-size: 0.1125rem;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.create-new-chat::before {
+  position: absolute;
+  background-color: var(--create-new-chat-plus);
+  block-size: 0.1125rem;
+  content: '';
+  inline-size: 1.55rem;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.create-new-chat:hover {
+  opacity: 0.9;
+  transform: rotate(10deg);
+}

@@ -1,5 +1,6 @@
 .link {
   color: var(--text-color-blue);
+  cursor: pointer;
   font-size: 0.6875rem;
   font-weight: 500;
   inline-size: 100%;

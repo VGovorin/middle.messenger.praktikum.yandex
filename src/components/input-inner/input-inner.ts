@@ -35,6 +35,6 @@ export class InputInner extends Block<IProps> {
         ref
         onBlur
       />
-  `;
+    `;
   }
 }

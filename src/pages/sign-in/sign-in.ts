@@ -1,4 +1,7 @@
+import { PAGES } from '@/shared/project-constants/pages';
+import { signin } from '@/shared/services/auth/auth';
 import { Block } from '@/shared/utils/block';
+import { Router } from '@/shared/utils/router';
 import * as validators from '@/shared/utils/validators';
 import { ErrorType } from '@/shared/utils/validators/validators';
 
@@ -10,6 +13,7 @@ interface IProps {
     password: ValidateDataFn;
   };
   onLogin: (event: PointerEvent) => void;
+  handleClickGoToSignUp: () => void;
 }
 
 export class SignIn extends Block<IProps> {
@@ -29,10 +33,23 @@ export class SignIn extends Block<IProps> {
           return;
         }
 
+        signin({
+          login,
+          password,
+        }).catch((error) => {
+          this.refs.errorLine.setProps({
+            errorMessage: error.reason,
+          });
+        });
+
         console.log({
           login,
           password,
         });
+      },
+
+      handleClickGoToSignUp: () => {
+        Router.go(PAGES.SIGN_UP);
       },
     });
   }
@@ -42,7 +59,7 @@ export class SignIn extends Block<IProps> {
         <main class="container">
           {{#Form}}
             {{# Fieldset}}
-              {{{ Legend title=title  }}}
+              {{{ Legend title="Sign In"  }}}
               <div class="form-items-wrapper">
               {{{ Input
                 type="text"
@@ -64,8 +81,9 @@ export class SignIn extends Block<IProps> {
             {{/Fieldset}}
             {{#FormControllers}}
               {{{ Button label="Sign In" type="primary" page="list" onClick=onLogin }}}
-              {{{ Link label="Sign Up" href="#" }}}
+              {{{ Link onClick=handleClickGoToSignUp label="Sign Up" href="#" }}}
             {{/FormControllers}}
+            {{{ ErrorLine errorMessage=errorMessage ref="errorLine"}}}
           {{/Form}}
         </main>
         `;

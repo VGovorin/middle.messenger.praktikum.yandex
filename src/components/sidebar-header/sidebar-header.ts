@@ -1,15 +1,25 @@
+import { PAGES } from '@/shared/project-constants/pages';
 import { Block } from '@/shared/utils/block';
+import { Router } from '@/shared/utils/router';
 
-export class SidebarHeader extends Block<{}> {
+interface IProps {
+  handleClickGoToProfile: () => void;
+}
+
+export class SidebarHeader extends Block<IProps> {
+  constructor(props: IProps) {
+    super({
+      ...props,
+      handleClickGoToProfile: () => {
+        Router.go(PAGES.PROFILE);
+      },
+    });
+  }
+
   protected render(): string {
     return `
       <div class="nav-panel-header">
-        <a
-          class="text-fs-12 profile-link"
-          href="#"
-        >
-          Profile <span class="profile-link-arrow"></span>
-        </a>
+        {{{ LinkProfile onClick=handleClickGoToProfile }}}
         <div class="chat-search-widget">
           <label class="visually-hidden" for="chat-search-input">Search Chat</label>
           <input

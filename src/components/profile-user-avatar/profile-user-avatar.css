@@ -6,7 +6,6 @@
   background-color: var(--backing-avatar-background);
   block-size: 8.125rem;
   clip-path: circle(50%);
-  cursor: pointer;
   inline-size: 8.125rem;
 }
 
@@ -25,6 +24,7 @@
   inset-block-start: 0;
   inset-inline-start: 0;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.2s ease-in-out;
 }
 
@@ -39,4 +39,21 @@
 
 .profile-avatar-wrapper:hover > .change-avatar-wrapper {
   opacity: 1;
+}
+
+.change-user-avatar-input {
+  position: absolute;
+  cursor: pointer;
+  inset-block: 0 0;
+  inset-inline: 0 0;
+  opacity: 0;
+}
+
+.user-avatar-container {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.user-avatar {
+  object-fit: cover;
 }

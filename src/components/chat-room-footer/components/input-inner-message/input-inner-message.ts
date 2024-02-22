@@ -24,7 +24,7 @@ export class InputInnerMessage extends Block<IProps> {
         type="text"
         placeholder="Message"
         name="message"
-        id="message"
+        id="input-message-chat"
         ref
         onBlur
       />

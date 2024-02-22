@@ -1,3 +1,5 @@
+import { baseUrl } from '@/shared/lib/base-url';
+
 enum METHOD {
   GET = 'GET',
   POST = 'POST',
@@ -6,13 +8,16 @@ enum METHOD {
 }
 
 interface Options {
-  method: METHOD;
+  method?: METHOD;
   headers?: Record<string, any>;
   data?: any;
   timeout?: number;
 }
 
-type HTTPMethod = (url: string, options?: Options) => Promise<unknown>;
+type HTTPMethod = <TResponse>(
+  url: string,
+  options?: Options,
+) => Promise<TResponse>;
 
 function queryStringify(data: any) {
   if (typeof data !== 'object') {
@@ -26,9 +31,15 @@ function queryStringify(data: any) {
 }
 
 export class HTTPTransport {
+  private endpoint: string;
+
+  constructor(endpoint: string) {
+    this.endpoint = `${baseUrl.HOST}${endpoint}`;
+  }
+
   get: HTTPMethod = (url, options) => {
     return this.request(
-      url,
+      `${this.endpoint}${url}`,
       { ...options, method: METHOD.GET },
       options?.timeout,
     );
@@ -36,7 +47,7 @@ export class HTTPTransport {
 
   post: HTTPMethod = (url, options) => {
     return this.request(
-      url,
+      `${this.endpoint}${url}`,
       { ...options, method: METHOD.POST },
       options?.timeout,
     );
@@ -44,7 +55,7 @@ export class HTTPTransport {
 
   put: HTTPMethod = (url, options) => {
     return this.request(
-      url,
+      `${this.endpoint}${url}`,
       { ...options, method: METHOD.PUT },
       options?.timeout,
     );
@@ -52,13 +63,17 @@ export class HTTPTransport {
 
   delete: HTTPMethod = (url, options) => {
     return this.request(
-      url,
+      `${this.endpoint}${url}`,
       { ...options, method: METHOD.DELETE },
       options?.timeout,
     );
   };
 
-  request = (url: string, options: Options, timeout = 5000) => {
+  request = <TResponse>(
+    url: string,
+    options: Options,
+    timeout = 5000,
+  ): Promise<TResponse> => {
     const { headers = {}, method, data } = options;
 
     return new Promise((resolve, reject) => {
@@ -71,13 +86,18 @@ export class HTTPTransport {
       const isGet = method === METHOD.GET;
 
       xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
+      xhr.withCredentials = true;
 
       Object.keys(headers).forEach((key) => {
         xhr.setRequestHeader(key, headers[key]);
       });
 
-      xhr.onload = () => {
-        resolve(xhr);
+      xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(xhr.response);
+        } else {
+          reject(JSON.parse(xhr.response));
+        }
       };
 
       xhr.onabort = reject;
@@ -88,8 +108,11 @@ export class HTTPTransport {
 
       if (isGet || !data) {
         xhr.send();
-      } else {
+      } else if (data instanceof FormData) {
         xhr.send(data);
+      } else {
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(data));
       }
     });
   };

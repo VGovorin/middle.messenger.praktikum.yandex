@@ -6,8 +6,10 @@ export interface RefType {
   [key: string]: any;
 }
 
-export interface BlockClass<P extends object, R extends RefType>
-  extends Function {
+export interface BlockClass<
+  P extends Record<string, any>,
+  R extends RefType = RefType,
+> extends Function {
   new (props: P): Block<P, R>;
   componentName?: string;
 }

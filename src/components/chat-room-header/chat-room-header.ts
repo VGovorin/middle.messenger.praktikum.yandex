@@ -1,25 +1,48 @@
+import { changeChatAvatar } from '@/shared/services/chats';
 import { Block } from '@/shared/utils/block';
 
-export class ChatRoomHeader extends Block<{}> {
+interface IProps {
+  handleChangeChangeAvatar: (e: Event) => void;
+  currentChatId: number;
+}
+
+export class ChatRoomHeader extends Block<IProps> {
+  constructor(props: IProps) {
+    super({
+      ...props,
+      handleChangeChangeAvatar: (e: Event) => {
+        const target = e.target as HTMLInputElement;
+        if (target.files && target.files.length > 0) {
+          const [avatar] = target.files;
+          const formData = new FormData();
+          formData.append('avatar', avatar);
+          formData.append('chatId', this.props.currentChatId.toString());
+          console.log(formData.values());
+          changeChatAvatar(formData);
+        }
+      },
+    });
+  }
+
   protected render(): string {
+    const state = window.store.getState();
+    const [currentChat] = state.chats.filter(
+      (chat) => chat.id === state.currentChatId,
+    );
+
+    const title = currentChat?.title;
+
     return `
       <div class="chat-room-header">
         <div class="chat-room-header-user-container">
-          <div class="chat-room-header-user-avatar-wrapper">
-            <img
-              class="chat-room-header-user-avatar"
-              alt="Charlie"
-              width="34"
-              height="34"
-              src="#"
-              onerror="this.onerror=null; this.src='/plug.svg'"
-            />
-          </div>
-          <p class="chat-room-header-user-name">Charlie</p>
+          {{{ ChatAvatar onChange=handleChangeChangeAvatar }}}
+          <p class="chat-room-header-user-name">${title}</p>
         </div>
-        <button class="kebab-button" type="button" aria-label="button" name="button" >
-          {{{ SvgIcon width="0.1875rem" height="0.9375rem" name="kebab-menu" type="kebab-menu" }}}
-        </button>
+        {{{ ChatRoomHandleUser
+          handleClickAddUser=handleClickAddUser
+          handleClickDeleteUser=handleClickDeleteUser
+          handleClickRemoveChat=handleClickRemoveChat
+        }}}
       </div>
       `;
   }

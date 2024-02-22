@@ -1,8 +1,18 @@
 import { Block } from '@/shared/utils/block';
-import template from './chat-room-body.hbs?raw';
 
 export class ChatRoomBody extends Block<{}> {
   protected render(): string {
-    return template;
+    return `
+      <div class="chat-room-body">
+        {{#each messages}}
+          {{{ UserMessageWrapper
+            type="incoming"
+            userId=this.user_id
+            message=this.content
+            datetime=this.time
+          }}}
+        {{/each}}
+      </div>
+    `;
   }
 }
