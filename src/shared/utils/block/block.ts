@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 import Handlebars from 'handlebars';
-import { EventBus } from '@/shared/utils/event-bus';
+import { EventBus } from '../event-bus/event-bus.ts';
 
 export interface RefType {
   [key: string]: any;

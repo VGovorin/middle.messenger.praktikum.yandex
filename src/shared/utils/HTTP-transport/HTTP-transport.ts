@@ -1,6 +1,6 @@
-import { baseUrl } from '@/shared/lib/base-url';
+import { baseUrl } from '../../lib/base-url/base-url.ts';
 
-enum METHOD {
+export enum METHOD {
   GET = 'GET',
   POST = 'POST',
   PUT = 'PUT',
@@ -38,8 +38,12 @@ export class HTTPTransport {
   }
 
   get: HTTPMethod = (url, options) => {
+    const data = options?.data;
+    const newUrl =
+      data && Object.keys(data).length ? `${url}${queryStringify(data)}` : url;
+
     return this.request(
-      `${this.endpoint}${url}`,
+      `${this.endpoint}${newUrl}`,
       { ...options, method: METHOD.GET },
       options?.timeout,
     );
@@ -85,7 +89,7 @@ export class HTTPTransport {
       const xhr = new XMLHttpRequest();
       const isGet = method === METHOD.GET;
 
-      xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
+      xhr.open(method, url);
       xhr.withCredentials = true;
 
       Object.keys(headers).forEach((key) => {
