@@ -6,10 +6,6 @@ Visit [https://bright-granita-14d277.netlify.app/](https://bright-granita-14d277
 
 See the design [here](https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?type=design&node-id=0-1&mode=design&t=gw7tjM786qIM8J7e-0).
 
-## Navigation
-
-A list of all pages can be found [here](https://bright-granita-14d277.netlify.app/).
-
 ## Description
 
 Project Messenger: A messaging application for easy communication. Features include real-time messaging, user-friendly interface. Created for educational purposes.
@@ -26,6 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 - `npm install` — install dependency,
 - `npm run start` - stable version build.
+- `npm run test` - run test.
 
 ## Learn More
 
