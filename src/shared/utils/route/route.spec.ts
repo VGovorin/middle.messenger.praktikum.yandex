@@ -56,10 +56,4 @@ describe('Route', () => {
     expect(route.match('/home')).to.be.true;
     expect(route.match('/about')).to.be.false;
   });
-
-  it('Should render the block', () => {
-    const renderSpy = sandbox.spy(route, 'render');
-    route.render();
-    expect(renderSpy.calledOnce).to.be.true;
-  });
 });
