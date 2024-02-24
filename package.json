@@ -16,7 +16,8 @@
     "format": "prettier --check --ignore-path .prettierignore .",
     "format:fix": "prettier --ignore-path .prettierignore --write .",
     "test": "mocha",
-    "precommit": "npm run test && npm run lint && npm run lint:stylelint"
+    "precommit": "npm run test && npm run lint && npm run lint:stylelint",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/chai": "^4.3.11",
