@@ -1,8 +1,8 @@
-import { PAGES } from '@/shared/project-constants/pages';
-import { BlockClass } from '@/shared/utils/block/block';
-import { Route } from '@/shared/utils/route/route';
+import { PAGES } from '../../project-constants/pages.ts';
+import { BlockClass } from '../block/block.ts';
+import { Route } from '../route/route.ts';
 
-class Router {
+export class Router {
   private routes: Route[] = [];
 
   private history: History = window.history;
